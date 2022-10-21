@@ -44,3 +44,16 @@ window.addEventListener('DOMContentLoaded', () => {
 // breakpointChecker();
 
 // используйте .closest(el)
+
+// мой js
+
+let aboutButton = document.querySelector('.about__button');
+let aboutHidden = document.querySelector('.about__additional');
+
+// почему-то иначе первый клик не работает
+aboutButton.innerHTML = 'Подробнее';
+
+aboutButton.addEventListener('click', function() {
+  aboutButton.innerHTML === 'Подробнее' ? aboutButton.innerHTML = 'Скрыть': aboutButton.innerHTML = 'Подробнее'
+  aboutHidden.classList.toggle('about__additional--hidden');
+})

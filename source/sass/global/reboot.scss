@@ -16,8 +16,8 @@ html {
   font-weight: 400;
   font-size: $fz-default;
   line-height: 24px;
-  font-family: $ff-placeholder;
-  color: $color-default-black;
+  font-family: "PT Mono", $font-monospace;
+  color: $color-black-pearl;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -30,7 +30,6 @@ html {
 body {
   width: 100%;
   height: 100%;
-
   background-color: $color-default-white;
 }
 
