@@ -17,9 +17,17 @@ $color-deep-sky-blue:               #00B2ff;
 $color-alice-blue:                  #f2f5f7;
 $color-whisper:                     #ebebeb;
 $color-black-pearl:                 #041827;
-// Gradient
+$color-promo:                       rgba(25, 32, 36, 0.7);
+$color-filter-catalog:              linear-gradient(rgba(4, 24, 39, 0.5), rgba(4, 24, 39, 0.5));
+$color-transparent-2:               rgba(4, 20, 39, 0.15);
+$color-transparent-3:               rgba(4, 24, 39, 0.5);
+$color-transparent-4:               rgba(255, 255, 255, 0.7);
 
+// Gradient
 $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+$black-to-bottom-header:            linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
+$black-to-bottom-promo:             linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%);
+$black-to-bottom-catalog:           linear-gradient(rgba(4, 24, 39, 0.5), rgba(4, 24, 39, 0.5));
 
 // Typography
 // ---------------------------------
@@ -60,3 +68,33 @@ $vp-1920:                           1920px;
 
 $retina-dpi:                        144dpi;
 $retina-dppx:                       1.5dppx;
+
+
+// резиновая верстка
+$wrapper-padding-desktop-min: 50px;
+$wrapper-padding-desktop: percentage(calc(350 / 1920));
+$wrapper-padding-desktop-max: 350px;
+
+// promo
+$promo-margin-desktop-min: 50px;
+$promo-margin-desktop: percentage(calc(125 / 1220));
+$promo-margin-desktop-max: 125px;
+
+// catalog
+$list-grid-gap-desktop-min: 10px;
+$list-grid-gap-desktop: 10%;
+$list-grid-gap-desktop-max: 85px;
+
+$title-margin-desktop-min: 10px;
+$title-margin-desktop: 10%;
+$title-margin-desktop-max: 40px;
+
+$card-width-desktop-min: 150px;
+$card-width-desktop: 100%;
+$card-width-desktop-max: 350px;
+
+// feedback
+$before-right-position-desktop: percentage(calc(980 / 1920));
+
+// footer
+$grid-width: percentage(calc(345 / 1220));

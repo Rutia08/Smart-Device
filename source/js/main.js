@@ -47,13 +47,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // мой js
 
-let aboutButton = document.querySelector('.about__button');
-let aboutHidden = document.querySelector('.about__additional');
+let aboutButton = document.querySelector('[data-about-button]');
+let aboutAdditional = document.querySelector('[data-about-additional]');
 
-// почему-то иначе первый клик не работает
+aboutButton.classList.remove('about__button--nojs');
+aboutAdditional.classList.add('is-hidden');
+
+// почему-то без этого первый клик не работает
 aboutButton.innerHTML = 'Подробнее';
 
 aboutButton.addEventListener('click', function() {
   aboutButton.innerHTML === 'Подробнее' ? aboutButton.innerHTML = 'Скрыть': aboutButton.innerHTML = 'Подробнее'
-  aboutHidden.classList.toggle('about__additional--hidden');
+  aboutAdditional.classList.toggle('is-hidden');
 })
