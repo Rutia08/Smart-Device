@@ -34,14 +34,10 @@
     display: flex;
     flex-shrink: 0;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     min-height: 100%;
-    padding: 60px 40px;
-
-    @include vp-767 {
-      padding: 60px 16px;
-    }
+    padding: 146px 718px 0 702px;
   }
 
   &__overlay {
@@ -57,9 +53,10 @@
 
   &__content {
     position: relative;
+    border-radius: 3px;
 
     width: 500px;
-    padding: 40px;
+    padding: 37px 40px 43px 37px;
 
     background-color: $color-deep-sky-blue;
 
@@ -71,8 +68,8 @@
 
   &__close-btn {
     position: absolute;
-    top: 22px;
-    right: 22px;
+    top: 17px;
+    right: 15px;
     z-index: 1;
 
     width: 40px;
@@ -113,7 +110,6 @@
     transform: scale(1);
     visibility: visible;
     opacity: 1;
-
     pointer-events: auto;
   }
 
@@ -121,4 +117,37 @@
     display: flex;
     flex-direction: column;
   }
+
+  & h2 {
+    font-size: 30px;
+    line-height: 140.62%;
+    margin-left: 3px;
+    margin-bottom: 3px;
+  }
+
+  & p {
+    margin-bottom: 40px;
+  }
+
+  & textarea {
+    margin-bottom: 6px;
+  }
+
+  & .btn {
+    margin-right: 0;
+  }
+
+  & .feedback__checkbox label {
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+
+  & .feedback__checkbox p {
+    margin-bottom: 0;
+  }
+
+  & .feedback__checkbox span {
+    top: 0;
+  }
+
 }

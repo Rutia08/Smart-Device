@@ -31,11 +31,11 @@
             </a>
           </li>
           <li class="header__contacts-item" >
-            <a href="tel:+7495005252">
+            <a href="tel:+74950005252">
               <svg aria-hidden="true" role="img" focusable="false" width="20" height="20" viewBox="0 0 21 20">
                 <use href="img/sprite_auto.svg#phone-call"></use>
               </svg>
-              <span>+7 (495) 00 52 52</span>
+              <span>+7 (495) 000 52 52</span>
             </a>
           </li>
         </ul>
@@ -48,7 +48,7 @@
         <div class="promo__wrapper">
           <h2>Печатные платы</h2>
           <p>производство и монтаж, поставка комплектующих,<br>блоков и модулей</p>
-          <form action="#form">
+          <form action="#feedback-form">
             <button class="promo__button btn btn--blue" type="submit">Получить бесплатную консультацию</button>
           </form>
         </div>
@@ -82,7 +82,7 @@
                 </svg>
               </div>
               <h3>Полная конфиденциальность</h3>
-              <p>По желанию клиента мы обеспечиваем полную конфиденциальность.</p>
+              <p>По желанию клиента &ensp;мы обеспечиваем полную конфиденциальность.</p>
             </li>
             <li class="advantages__item">
               <div class="advantages__logo">
@@ -91,7 +91,7 @@
                 </svg>
               </div>
               <h3>Персонализация стоимости</h3>
-              <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.</p>
+              <p>Мы &ensp;подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.</p>
             </li>
           </ul>
         </div>
@@ -133,7 +133,7 @@
             <li class="catalog__item catalog__item--accessories">
               <a href="#">
                 <h3>
-                  Комплектующие<br>для &nbsp;светотехники
+                  Комплектующие<br>для&nbsp;светотехники
                 </h3>
               </a>
             </li>
@@ -154,10 +154,10 @@
                 alt="Самолет.">
             </picture>
           </div>
-          <div class="feedback__form">
+          <div id="feedback-form" class="feedback__form">
             <h2>Остались вопросы? Задайте их нам!</h2>
             <p>Мы проконсультируем Вас бесплатно</p>
-            <form id="form" action="https://echo.htmlacademy.ru/" method="get">
+            <form action="https://echo.htmlacademy.ru/" method="get">
                 <label class="visually-hidden" for="name">Имя.</label>
                 <input type="text" name="name" id="name" placeholder="Имя">
                 <label class="visually-hidden" for="phone">Телефон.</label>
@@ -169,7 +169,7 @@
                 <label>
                   <input type="checkbox" name="personal_data" checked required>
                   <span></span>
-                  Я согласен на обработку  персональных данных
+                  Я согласен на обработку персональных данных
                 </label>
               </div>
             </form>
@@ -193,25 +193,25 @@
             <h2 class="visually-hidden">Социальные сети.</h2>
             <ul class="footer__list footer__list--social">
               <li class="footer__list-item footer__list-item--social">
-                <a href="https://vk.com/htmlacademy">
-                  <span class="visually-hidden">ВКонтакте.</span>
-                  <svg aria-hidden="true" role="img" focusable="false" width="40" height="40">
-                    <use href="img/sprite_auto.svg#vk"></use>
+                <a href="https://ok.ru/htmlacademy">
+                  <span class="visually-hidden">OK.</span>
+                  <svg aria-hidden="true" role="img" focusable="false" width="30" height="30">
+                    <use href="img/sprite_auto.svg#ok"></use>
                   </svg>
                 </a>
               </li>
               <li class="footer__list-item footer__list-item--social">
-                <a href="https://ok.ru/htmlacademy">
-                  <span class="visually-hidden">OK.</span>
-                  <svg aria-hidden="true" role="img" focusable="false" width="40" height="40">
-                    <use href="img/sprite_auto.svg#ok"></use>
+                <a href="https://vk.com/htmlacademy">
+                  <span class="visually-hidden">ВКонтакте.</span>
+                  <svg aria-hidden="true" role="img" focusable="false" width="30" height="30">
+                    <use href="img/sprite_auto.svg#vk"></use>
                   </svg>
                 </a>
               </li>
               <li class="footer__list-item footer__list-item--social">
                 <a href="https://www.pinterest.com/keks_is_html_academy/">
                   <span class="visually-hidden">Pinterest.</span>
-                  <svg aria-hidden="true" role="img" focusable="false" width="40" height="40">
+                  <svg aria-hidden="true" role="img" focusable="false" width="30" height="30">
                     <use href="img/sprite_auto.svg#pnt"></use>
                   </svg>
                 </a>
@@ -219,7 +219,7 @@
             </ul>
           </div>
         </div>
-        <nav class="footer__item">
+        <nav class="footer__item footer__item--nav">
           <h2>Разделы сайта</h2>
           <ul class="footer__list footer__list--nav">
             <li class="footer__list-item">
@@ -234,6 +234,11 @@
             <li class="footer__list-item">
               <a href="#">Монтаж печатных плат</a>
             </li>
+          </ul>
+        </nav>
+        <nav class="footer__item footer__item--nav-2">
+          <h2 class="visually-hidden">Еще разделы сайта.</h2>
+          <ul class="footer__list">
             <li class="footer__list-item">
               <a href="#">Комплектующие</a>
             </li>
@@ -245,7 +250,7 @@
             </li>
           </ul>
         </nav>
-        <div class="footer__item">
+        <div class="footer__item footer__item--contacts">
           <h2>Наш офис</h2>
           <p>г. Мытищи, Олимпийский проспект, д.10</p>
           <ul class="footer__list ">
@@ -274,7 +279,7 @@
           </button>
           <div class="feedback">
             <h2>Закажите звонок</h2>
-            <p>Мы проконсультируем Вас бесплатно</p>
+            <p>Оставьте контакты, мы проконсультируем вас&nbsp;бесплатно в удобное время</p>
             <form action="https://echo.htmlacademy.ru/" method="get">
                 <label class="visually-hidden" for="name2">Имя.</label>
                 <input type="text" name="name" id="name2" placeholder="Имя">
@@ -287,7 +292,7 @@
                 <label>
                   <input type="checkbox" name="personal_data" checked required>
                   <span></span>
-                  Я согласен на обработку  персональных данных
+                  Я согласен на обработку &ensp;персональных данных
                 </label>
               </div>
             </form>

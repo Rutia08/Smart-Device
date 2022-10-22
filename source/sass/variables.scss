@@ -77,12 +77,24 @@ $wrapper-padding-desktop-max: 350px;
 
 // promo
 $promo-margin-desktop-min: 50px;
-$promo-margin-desktop: percentage(calc(125 / 1220));
-$promo-margin-desktop-max: 125px;
+$promo-margin-desktop: percentage(calc(129 / 1220));
+$promo-margin-desktop-max: 129px;
+
+$promo-padding-top-desktop: percentage(calc(308 / 1920));
+$promo-padding-bottom-desktop: percentage(calc(282 / 1920));
+
+$promo-grid-width-desktop: percentage(calc(600 / 1220));
+
+
+
+
+// about
+$about-wrapper-padding-right-desktop: percentage(calc(335 / 1920));
+$about-wrapper-padding-right-desktop-max: 335px;
 
 // catalog
-$list-grid-gap-desktop-min: 10px;
-$list-grid-gap-desktop: 10%;
+$list-grid-gap-desktop-min: 20px;
+$list-grid-gap-desktop: 7%;
 $list-grid-gap-desktop-max: 85px;
 
 $title-margin-desktop-min: 10px;
@@ -98,3 +110,5 @@ $before-right-position-desktop: percentage(calc(980 / 1920));
 
 // footer
 $grid-width: percentage(calc(345 / 1220));
+$grid-width-1: percentage(calc(350 / 1220));
+$grid-width-2: percentage(calc(220 / 1220));
