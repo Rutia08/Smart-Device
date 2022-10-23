@@ -105,6 +105,16 @@
         padding: 10px;
       }
 
+      @include hover {
+        span {
+          color: $color-deep-sky-blue;
+        }
+
+        svg {
+          color: $color-default-white;
+        }
+      }
+
       svg {
         color: #00b2ff;
         position: absolute;
