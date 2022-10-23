@@ -11,12 +11,12 @@
     }
 
     @include vp-1023 {
-      padding: 0 50px 80px;
+      padding: 39px clamp($wrapper-padding-tablet-min, $wrapper-padding-tablet, $wrapper-padding-tablet-max) 80px;
       min-width: 768px;
     }
 
     @include vp-767 {
-      padding: 0 25px 80px;
+      padding: 25px clamp($wrapper-padding-mobile-min, $wrapper-padding-mobile, $wrapper-padding-mobile-max) 80px;
       min-width: 320px;
     }
   }
@@ -47,13 +47,19 @@
       background-repeat: no-repeat;
 
       @include vp-1023 {
-        left: 2px;
+        left: -4px;
+        top: 1px;
       }
 
       @include vp-767 {
         display: none;
       }
     }
+
+    @include vp-767 {
+      min-height: auto;
+    }
+
   }
 
   & h2 {
@@ -86,13 +92,17 @@
     margin-bottom: 21px;
 
     @include vp-1023 {
-      margin: 0 0 20px 175px;
+      margin: 0 0 17px 175px;
     }
 
     @include vp-767 {
-      margin: 0 0 20px 0;
+      margin: 0 0 16px 0;
       font-size: 14px;
       line-height: 134.4%;
+
+      span {
+        display: none;
+      }
     }
   }
 
@@ -116,10 +126,12 @@
 
     @include vp-1023 {
       margin: 0 0 0 175px;
+      padding: 14px 48px 13px 51px;
     }
 
     @include vp-767 {
       margin: 0;
+      padding: 8px 40px 9px 39px;
     }
   }
 }

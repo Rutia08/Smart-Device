@@ -17,13 +17,13 @@
     }
 
     @include vp-1023 {
-      padding: 50px 50px 125px;
+      padding: 45px clamp($wrapper-padding-tablet-min, $wrapper-padding-tablet, $wrapper-padding-tablet-max) 124px;
       min-width: 768px;
       grid-template-columns: 1fr;
     }
 
     @include vp-767 {
-      padding: 50px 25px 90px;
+      padding: 47px clamp($wrapper-padding-mobile-min, $wrapper-padding-mobile, $wrapper-padding-mobile-max) 87px;
       min-width: 320px;
     }
 
@@ -72,13 +72,13 @@
     margin-bottom: 12px;
 
     @include vp-1023 {
-      margin-bottom: 10px;
+      margin-bottom: 7px;
     }
 
     @include vp-767 {
       font-size: 30px;
       line-height: 140.62%;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
   }
 
@@ -93,6 +93,7 @@
 
     @include vp-1023 {
       margin-bottom: 25px;
+      margin-left: -1px;
     }
 
     @include vp-767 {
@@ -111,7 +112,13 @@
 
     @include vp-1023 {
       margin-left: 0;
+      grid-template-columns: repeat(2,1fr);
     }
+
+    @include vp-767 {
+      grid-template-columns: 1fr;
+    }
+
   }
 
   & input {
@@ -127,16 +134,32 @@
       line-height: 22px;
       color: $color-default-white;
     }
+
+    @include vp-1023 {
+      padding-top: 16px;
+    }
+
+    @include vp-767 {
+      padding-bottom: 16px;
+    }
+
   }
 
   & input[type="text"] {
     grid-column: 1/2;
     grid-row: 1/2;
+
   }
 
   & input[type="tel"] {
     grid-column: 2/-1;
     grid-row: 1/2;
+
+
+    @include vp-767 {
+      grid-column: 1/-1;
+      grid-row: 2/3;
+    }
   }
 
   & textarea {
@@ -148,13 +171,23 @@
     border: none;
     background: $color-transparent-2;
     border-radius: 3px;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 
     &::placeholder {
       font-family: "PT Mono", $font-monospace;
       font-size: 16px;
       line-height: 22px;
       color: $color-default-white;
+    }
+
+    @include vp-1023 {
+      padding: 30px 15px;
+    }
+
+    @include vp-767 {
+      padding: 22px 15px;
+      height: 179px;
+      margin-bottom: 10px;
     }
   }
 
@@ -168,6 +201,16 @@
     color: $color-default-white;
     padding: 16px 25px 12px 25px;
     margin-right: 10px;
+
+    @include vp-1023 {
+      margin-right: 55px;
+      padding: 16px 25px 10px 25px;
+    }
+
+    @include vp-767 {
+      margin: 0;
+      width: 100%;
+    }
   }
 
   & input[type="checkbox"] {
@@ -198,6 +241,15 @@
   &__checkbox {
     margin-left: 37px;
 
+    @include vp-1023 {
+      margin-left: 28px;
+    }
+
+    @include vp-767 {
+      margin-top: -5px;
+      margin-left: 33px;
+    }
+
     label {
       margin: 0;
       padding: 0;
@@ -210,6 +262,10 @@
       color: $color-default-white;
       opacity: 0.8;
       text-align: left;
+
+      @include vp-1023 {
+        padding-top: 11px;
+      }
     }
 
     span {
@@ -221,6 +277,15 @@
       height: 15px;
       border-radius: 2px;
       border: 2px solid $color-default-white;
+
+      @include vp-1023 {
+        padding-top: 11px;
+        transform: translateY(-3px);
+      }
+
+      @include vp-767 {
+        transform: translateY(-5px);
+      }
     }
   }
 }

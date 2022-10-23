@@ -28,7 +28,6 @@ $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0
 $black-to-bottom-header:            linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
 $black-to-bottom-promo:             linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%);
 $black-to-bottom-catalog:           linear-gradient(rgba(4, 24, 39, 0.5), rgba(4, 24, 39, 0.5));
-
 // Typography
 // ---------------------------------
 
@@ -75,18 +74,23 @@ $wrapper-padding-desktop-min: 50px;
 $wrapper-padding-desktop: percentage(calc(350 / 1920));
 $wrapper-padding-desktop-max: 350px;
 
+$wrapper-padding-tablet-min: 50px;
+$wrapper-padding-tablet: percentage(calc(50 / 770));
+$wrapper-padding-tablet-max: 100px;
+
+$wrapper-padding-mobile-min: 25px;
+$wrapper-padding-mobile: percentage(calc(25 / 320));
+$wrapper-padding-mobile-max: 50px;
+
 // promo
 $promo-margin-desktop-min: 50px;
 $promo-margin-desktop: percentage(calc(129 / 1220));
 $promo-margin-desktop-max: 129px;
 
-$promo-padding-top-desktop: percentage(calc(308 / 1920));
+$promo-padding-top-desktop: percentage(calc(218 / 1920));
 $promo-padding-bottom-desktop: percentage(calc(282 / 1920));
 
 $promo-grid-width-desktop: percentage(calc(600 / 1220));
-
-
-
 
 // about
 $about-wrapper-padding-right-desktop: percentage(calc(335 / 1920));
@@ -99,7 +103,9 @@ $list-grid-gap-desktop-max: 85px;
 
 $title-margin-desktop-min: 10px;
 $title-margin-desktop: 10%;
-$title-margin-desktop-max: 40px;
+$title-margin-right-desktop: 40%;
+$title-margin-desktop-max: 80px;
+$title-margin-right-desktop-max: 150px;
 
 $card-width-desktop-min: 150px;
 $card-width-desktop: 100%;
