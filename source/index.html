@@ -7,6 +7,10 @@
     <meta name="description" content="Первый проект Акселератора">
     <title>Smart Device</title>
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preload" href="fonts/roboto-condensed-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/roboto-condensed-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/pt-mono-regular.woff2" as="font" type="font/woff2" crossorigin="">
   </head>
   <body>
     <header class="header">
@@ -220,8 +224,13 @@
           </div>
         </div>
         <nav class="footer__item footer__item--nav">
-          <h2>Разделы сайта</h2>
-          <ul class="footer__list footer__list--nav">
+          <div class="footer__heading-wrapper" data-heading-wrapper-1>
+            <h2>Разделы сайта</h2>
+            <button class="footer__button is-open footer__button--nojs btn" type="button" data-footer-button-1>
+              <span class="visually-hidden">Открыть меню.</span>
+            </button>
+          </div>
+          <ul class="footer__list footer__list--nav" data-nav-list-1>
             <li class="footer__list-item">
               <a href="#">О Компании</a>
             </li>
@@ -238,7 +247,7 @@
         </nav>
         <nav class="footer__item footer__item--nav-2">
           <h2 class="visually-hidden">Еще разделы сайта.</h2>
-          <ul class="footer__list">
+          <ul class="footer__list" data-nav-list-2>
             <li class="footer__list-item">
               <a href="#">Комплектующие</a>
             </li>
@@ -251,9 +260,16 @@
           </ul>
         </nav>
         <div class="footer__item footer__item--contacts">
-          <h2>Наш офис</h2>
-          <p>г. Мытищи, Олимпийский проспект, д.10</p>
-          <ul class="footer__list ">
+          <div class="footer__heading-wrapper" data-heading-wrapper-2>
+            <h2>Наш офис</h2>
+            <button class="footer__button footer__button--nojs btn" type="button" data-footer-button-2>
+              <span class="visually-hidden">Открыть меню.</span>
+            </button>
+          </div>
+          <ul class="footer__list" data-contacts-list>
+            <li class="footer__list-item">
+              <p>г. Мытищи, Олимпийский проспект, д.10</p>
+            </li>
             <li class="footer__list-item">
               <a href="tel:+74955894050">+7 (495) 589-40-50</a>
             </li>

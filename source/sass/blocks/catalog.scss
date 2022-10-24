@@ -43,7 +43,6 @@
       padding-right: 25px;
       margin-bottom: 29px;
       font-size: 28px;
-      line-height: 140.62%;
 
       text-indent: -9999px;
       line-height: 0;
@@ -60,10 +59,9 @@
   &__list {
     margin: 0;
     padding: 0;
-    margin-left: 2px;
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(3,29.1%);
+    grid-template-columns: repeat(3, 1fr);
     gap: clamp($list-grid-gap-desktop-min, $list-grid-gap-desktop, $list-grid-gap-desktop-max);
 
     @include vp-1023 {
@@ -93,18 +91,18 @@
       background-color: $color-black-pearl;
 
       background-image:
-      $black-to-bottom-catalog,
-      image-set(
-        "../img/background.webp" 1x,
-        "../img/background.png" 1x
+        $black-to-bottom-catalog,
+        image-set(
+          "../img/background.webp" 1x,
+          "../img/background.png" 1x
       );
 
       @media (min-resolution: 2dppx) {
         background-image:
-        $black-to-bottom-catalog,
-        image-set(
-          "../img/background@2x.webp" 2x,
-          "../img/background@2x.png" 2x
+          $black-to-bottom-catalog,
+          image-set(
+            "../img/background@2x.webp" 2x,
+            "../img/background@2x.png" 2x
         );
       }
 
@@ -122,19 +120,20 @@
       }
 
       @include hover {
+
         background-image:
-        $black-catalog-hover,
-        image-set(
-        "../img/background.webp" 1x,
-        "../img/background.png" 1x
-        );
+          $black-catalog-hover,
+          image-set(
+            "../img/background.webp" 1x,
+            "../img/background.png"  1x
+          );
 
         @media (min-resolution: 2dppx) {
           background-image:
-          $black-catalog-hover,
-          image-set(
-          "../img/background@2x.webp" 2x,
-          "../img/background@2x.png" 2x
+            $black-catalog-hover,
+            image-set(
+              "../img/background@2x.webp"2x,
+              "../img/background@2x.png" 2x
           );
         }
       }
@@ -146,7 +145,7 @@
         height: 60px;
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: 1px;
         background-color: $color-deep-sky-blue;
         background-image: url("../../img/svg/icon-products.svg");
         background-repeat: no-repeat;
@@ -155,6 +154,7 @@
 
         @include vp-1023 {
           width: 60px;
+          right: 0;
         }
 
         @include vp-767 {
@@ -165,7 +165,7 @@
     }
 
     h3 {
-      margin: 0 clamp($title-margin-desktop-min,$title-margin-right-desktop, $title-margin-right-desktop-max) 0 clamp($title-margin-desktop-min, $title-margin-desktop, $title-margin-desktop-max);
+      margin: 0 clamp($title-margin-desktop-min, $title-margin-right-desktop, $title-margin-right-desktop-max) 0 clamp($title-margin-desktop-min, $title-margin-desktop, $title-margin-desktop-max);
       padding: 0;
       font-family: "Roboto Condensed", $font-sans-serif;
       font-weight: 400;
@@ -184,7 +184,7 @@
     }
 
     &--production a {
-      background-position: bottom left, bottom -141px left -188px;
+      background-position: bottom left, bottom -141px left -189px;
 
       @include vp-1023 {
         background-position: bottom left, bottom -108px left -244px;

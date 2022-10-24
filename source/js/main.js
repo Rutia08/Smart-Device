@@ -5,39 +5,50 @@ import {initModals} from './modules/modals/init-modals';
 
 window.addEventListener('DOMContentLoaded', () => {
 
-  //маска для поля ввода телефона (https://web-revenue.ru/verstka/maska-vvoda-telefona-v-input-na-js)
-  [].forEach.call( document.querySelectorAll('[data-phone-input]'), function(input) {
-    var keyCode;
+  //  маска для поля ввода телефона (https://web-revenue.ru/verstka/maska-vvoda-telefona-v-input-na-js)
+  [].forEach.call(document.querySelectorAll('[data-phone-input]'), function (input) {
+    let keyCode;
     function mask(event) {
-        event.keyCode && (keyCode = event.keyCode);
-        var pos = this.selectionStart;
-        if (pos < 3) event.preventDefault();
-        var matrix = "+7 (___) ___ ____",
-            i = 0,
-            def = matrix.replace(/\D/g, ""),
-            val = this.value.replace(/\D/g, ""),
-            new_value = matrix.replace(/[_\d]/g, function(a) {
-                return i < val.length ? val.charAt(i++) || def.charAt(i) : a
-            });
-        i = new_value.indexOf("_");
-        if (i != -1) {
-            i < 5 && (i = 3);
-            new_value = new_value.slice(0, i)
-        }
-        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
-            function(a) {
-                return "\\d{1," + a.length + "}"
-            }).replace(/[+()]/g, "\\$&");
-        reg = new RegExp("^" + reg + "$");
-        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
-        if (event.type == "blur" && this.value.length < 5)  this.value = ""
+      keyCode = event.keyCode;
+      let pos = input.selectionStart;
+      if (pos < 3) {
+        event.preventDefault();
+      }
+      let matrix = '+7 (___) ___ __ __';
+      let i = 0;
+      let def = matrix.replace(/\D/g, '');
+      let val = input.value.replace(/\D/g, '');
+      let newValue = matrix.replace(/[_\d]/g, function (a) {
+        return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
+      });
+
+      i = newValue.indexOf('_');
+
+      //  if (i !== -1) {
+      if (i !== -1) {
+        // (i < 5) && (i = 3);
+        newValue = newValue.slice(0, i);
+      }
+
+      let reg = matrix.substring(0, input.value.length).replace(/_+/g, function (a) {
+        return '\\d{1,' + a.length + '}';
+      }).replace(/[+()]/g, '\\$&');
+
+      reg = new RegExp('^' + reg + '$');
+
+      if (!reg.test(input.value) || input.value.length < 5 || keyCode > 47 && keyCode < 58) {
+        input.value = newValue;
+      }
+
+      if (event.type === 'blur' && input.value.length < 5) {
+        input.value = '';
+      }
     }
 
-    input.addEventListener("input", mask, false);
-    input.addEventListener("focus", mask, false);
-    input.addEventListener("blur", mask, false);
-    input.addEventListener("keydown", mask, false)
-
+    input.addEventListener('input', mask, false);
+    input.addEventListener('focus', mask, false);
+    input.addEventListener('blur', mask, false);
+    input.addEventListener('keydown', mask, false);
   });
 
   // Utils
@@ -85,14 +96,47 @@ window.addEventListener('DOMContentLoaded', () => {
 let aboutButton = document.querySelector('[data-about-button]');
 let aboutAdditional = document.querySelector('[data-about-additional]');
 
+// data-heading-wrapper
+let footerHeadingWrapper1 = document.querySelector('[data-heading-wrapper-1]');
+let footerHeadingWrapper2 = document.querySelector('[data-heading-wrapper-2]');
+let footerButton1 = document.querySelector('[data-footer-button-1]');
+let footerButton2 = document.querySelector('[data-footer-button-2]');
+let footerNav1 = document.querySelector('[data-nav-list-1]');
+let footerNav2 = document.querySelector('[data-nav-list-2]');
+let footerContacts = document.querySelector('[data-contacts-list]');
+
+// about
 aboutButton.classList.remove('about__button--nojs');
 aboutAdditional.classList.add('is-hidden');
 
 // почему-то без этого первый клик не работает
 aboutButton.innerHTML = 'Подробнее';
 
-aboutButton.addEventListener('click', function() {
-  aboutButton.innerHTML === 'Подробнее' ? aboutButton.innerHTML = 'Скрыть': aboutButton.innerHTML = 'Подробнее'
+aboutButton.addEventListener('click', function () {
   aboutAdditional.classList.toggle('is-hidden');
-})
+  if (aboutButton.innerHTML === 'Подробнее') {
+    aboutButton.innerHTML = 'Скрыть';
+  } else {
+    aboutButton.innerHTML = 'Подробнее';
+  }
+});
 
+// footer menu
+footerButton1.classList.remove('footer__button--nojs');
+footerButton2.classList.remove('footer__button--nojs');
+
+footerHeadingWrapper1.addEventListener('click', function () {
+  footerButton1.classList.toggle('footer__button--list-opened');
+  footerNav1.classList.toggle('footer__list--opened');
+  footerNav2.classList.toggle('footer__list--opened');
+  footerButton2.classList.remove('footer__button--list-opened');
+  footerContacts.classList.remove('footer__list--opened');
+});
+
+footerHeadingWrapper2.addEventListener('click', function () {
+  footerButton2.classList.toggle('footer__button--list-opened');
+  footerContacts.classList.toggle('footer__list--opened');
+  footerButton1.classList.remove('footer__button--list-opened');
+  footerNav1.classList.remove('footer__list--opened');
+  footerNav2.classList.remove('footer__list--opened');
+});

@@ -6,30 +6,32 @@
     position: relative;
     margin: 0 auto;
     max-width: 1920px;
-    padding: $promo-padding-top-desktop clamp($wrapper-padding-desktop-min, $wrapper-padding-desktop, $wrapper-padding-desktop-max) $promo-padding-bottom-desktop;
-    background-color: $color-black-pearl;
+    padding: 214px clamp($wrapper-padding-desktop-min, $wrapper-padding-desktop, $wrapper-padding-desktop-max) 280px;
 
-    background:
-    $black-to-bottom-promo,
-    image-set(
-      "../img/background.webp" 1x,
-      "../img/background.png" 1x);
-
-    @media (min-resolution: 2dppx) {
-      background:
+    background-image:
       $black-to-bottom-promo,
       image-set(
+        "../img/background.webp" 1x,
+        "../img/background.png" 1x
+      );
+
+    @media (min-resolution: 2dppx) {
+      background-image:
+        $black-to-bottom-promo,
+        image-set(
         "../img/background@2x.webp" 2x,
-        "../img/background@2x.png" 2x);
+        "../img/background@2x.png" 2x
+        );
     }
 
+    background-color: $color-black-pearl;
     background-repeat: no-repeat;
     background-size: 1920px;
     background-position: bottom left, bottom -200px left;
 
     @include vp-1439 {
-      padding: 9%;
-      padding-top: 15%;
+      padding-left: 9%;
+      padding-right: 9%;
     }
 
     @include vp-1023 {
@@ -39,7 +41,7 @@
     }
 
     @include vp-767 {
-      padding: 105px clamp($wrapper-padding-mobile-min, $wrapper-padding-mobile, $wrapper-padding-mobile-max) 190px;
+      padding: 110px clamp($wrapper-padding-mobile-min, $wrapper-padding-mobile, $wrapper-padding-mobile-max) 190px;
       min-width: 320px;
       background-size: 1220px;
       background-position: bottom left, bottom -127px left -229px;
@@ -47,12 +49,12 @@
   }
 
   & h2 {
-    margin: 0 clamp($promo-margin-desktop-min, $promo-margin-desktop, $promo-margin-desktop-max) 31px;
+    margin: 0 10px 33px clamp($promo-margin-desktop-min, $promo-margin-desktop, $promo-margin-desktop-max);
     padding: 0;
     font-family: "Roboto Condensed", $font-sans-serif;
     font-weight: 700;
-    font-size: min(4.16vw, 80px);
-    line-height: 117.5%;
+    font-size: 80px;
+    line-height: 94px;
     letter-spacing: 0.07em;
     text-transform: uppercase;
     color: #f2f5f7;
@@ -71,10 +73,10 @@
   }
 
   & p {
-    margin: 0 clamp($promo-margin-desktop-min, $promo-margin-desktop, $promo-margin-desktop-max) 47px;
+    margin: 0 clamp($promo-margin-desktop-min, $promo-margin-desktop, $promo-margin-desktop-max) 46px;
     padding: 0;
     font-weight: 400;
-    font-size: min(1.14vw, 22px);
+    font-size: 22px;
     line-height: 155%;
     color: #f2f5f7;
 
@@ -97,7 +99,7 @@
   & button {
     margin: 0 clamp($promo-margin-desktop-min, $promo-margin-desktop, $promo-margin-desktop-max);
     padding: 15px 27px 19px;
-    font-size: min(0.936vw, 22px);
+    font-size: min(0.94vw, 22px);
     line-height: 116%;
 
     @include vp-1023 {
@@ -110,11 +112,10 @@
 
     @include vp-767 {
       font-size: 14px;
-      line-height: 16px;
       margin: 0;
       width: 100%;
 
-      padding: 11px 27px 12px;
+      padding: 11px 27px 13px;
 
       text-indent: -9999px;
       line-height: 0; /* Collapse the original line */
@@ -123,7 +124,7 @@
         content: "бесплатная консультация";
         text-indent: 0;
         display: block;
-        line-height: initial;
+        line-height: 16px;
       }
     }
   }

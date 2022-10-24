@@ -1,5 +1,4 @@
 .advantages {
-
   &__wrapper {
     margin: 0 auto;
     max-width: 1920px;
@@ -27,10 +26,9 @@
     margin: 0;
     padding: 0;
     display: grid;
-    margin-left: 3px;
-    grid-template-columns: repeat(2, $promo-grid-width-desktop);
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 30px;
-    column-gap: 33px;
+    column-gap: 31px;
 
     @include vp-1023 {
       margin-left: 0;
@@ -70,7 +68,9 @@
       background-color: $color-deep-sky-blue;
       border: 1px solid $color-deep-sky-blue;
 
-      .advantages__logo, h3, p {
+      .advantages__logo,
+      h3,
+      p {
         color: $color-alice-blue;
       }
     }
@@ -156,6 +156,5 @@
       font-size: 14px;
       line-height: 135%;
     }
-
   }
 }

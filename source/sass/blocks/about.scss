@@ -32,12 +32,13 @@
       height: 320px;
       position: absolute;
       top: 0;
-      left: 2px;
+      left: 0;
       z-index: -1;
       background-image: image-set(
         "../img/about_picture.webp" 1x,
         "../img/about_picture.png" 1x
       );
+
       @media (min-resolution: 2dppx) {
         background-image: image-set(
           "../img/about_picture.@2x.webp" 2x,
@@ -59,12 +60,11 @@
     @include vp-767 {
       min-height: auto;
     }
-
   }
 
   & h2 {
     padding: 0;
-    margin: 0 0 12px 253px;
+    margin: 0 0 12px 250px;
     font-family: "Roboto Condensed", $font-sans-serif;
     font-weight: 400;
     font-size: 36px;
@@ -88,7 +88,7 @@
     line-height: 22px;
     padding: 0;
     margin: 0;
-    margin-left: 253px;
+    margin-left: 250px;
     margin-bottom: 21px;
 
     @include vp-1023 {
@@ -112,7 +112,7 @@
 
   &__button {
     padding: 14px 50px;
-    margin-left: 253px;
+    margin-left: 250px;
     margin-top: 18px;
     color: $color-deep-sky-blue;
     border: 1px solid $color-deep-sky-blue;
