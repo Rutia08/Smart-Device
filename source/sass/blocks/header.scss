@@ -1,0 +1,151 @@
+.header {
+  background-image: $black-to-bottom-header;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+
+  @include vp-1023 {
+    position: relative;
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    padding: 30px clamp($wrapper-padding-desktop-min, $wrapper-padding-desktop, $wrapper-padding-desktop-max) 35px;
+    max-width: 1920px;
+    min-width: 1220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include vp-1439 {
+      padding-left: 8%;
+      padding-right: 8%;
+      min-width: 1024px;
+    }
+
+    @include vp-1023 {
+      padding: 20px clamp($wrapper-padding-tablet-min, $wrapper-padding-tablet, $wrapper-padding-tablet-max) 25px;
+      min-width: 768px;
+    }
+
+    @include vp-767 {
+      padding: 10px clamp($wrapper-padding-mobile-min, $wrapper-padding-mobile, $wrapper-padding-mobile-max) 15px;
+      align-items: flex-end;
+      min-width: 320px;
+    }
+  }
+
+  &__logo {
+    @include vp-767 {
+      margin-bottom: 5px;
+    }
+
+    img {
+      @include vp-767 {
+        margin-left: 1px;
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+
+  &__contacts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include vp-1023 {
+      margin-top: 0;
+      margin-right: 20px;
+      align-content: flex-start;
+    }
+
+    @include vp-767 {
+      margin-right: 10px;
+    }
+  }
+
+  &__contacts-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    &:not(:last-child) {
+      margin-right: 6.7vw;
+
+      @include vp-1023 {
+        margin-right: 20px;
+      }
+    }
+
+    @include vp-1023 {
+      margin-top: 0;
+    }
+
+    & a {
+      display: inline-flex;
+      padding-left: 28px;
+      padding-bottom: 2px;
+      position: relative;
+
+      @include vp-1023 {
+        padding: 10px;
+      }
+
+      @include hover {
+        span {
+          color: $color-deep-sky-blue;
+        }
+
+        svg {
+          color: $color-default-white;
+        }
+      }
+
+      svg {
+        color: #00b2ff;
+        position: absolute;
+        left: -5px;
+        top: 0;
+
+        @include vp-1023 {
+          position: relative;
+          left: 0;
+        }
+      }
+
+      span {
+        font-family: "PT Mono", $font-monospace;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        color: #f2f5f7;
+
+        @include vp-1023 {
+          display: none;
+          line-height: 0;
+        }
+      }
+    }
+  }
+
+  &__button {
+    padding: 10px 17px 12px 16px;
+    border: 1px solid #f2f5f7;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 16px;
+    margin-right: 60px;
+    margin-top: 5px;
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+}

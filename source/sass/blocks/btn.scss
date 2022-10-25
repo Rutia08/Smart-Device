@@ -1,0 +1,38 @@
+.btn {
+  display: inline-flex;
+  padding: 15px 25px 19px;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Roboto Condensed", $font-sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-alice-blue;
+  background-color: $color-transparent;
+  border-radius: 3px;
+
+  border: none;
+  cursor: pointer;
+
+  transition: opacity $trans-default;
+
+  &--blue {
+    background-color: $color-deep-sky-blue;
+  }
+
+
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+}
