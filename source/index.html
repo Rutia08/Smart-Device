@@ -88,7 +88,7 @@
               <h3>Полная конфиденциальность</h3>
               <p>По желанию клиента &ensp;мы обеспечиваем полную конфиденциальность.</p>
             </li>
-            <li class="advantages__item advantages__item--small">
+            <li class="advantages__item advantages__item--small advantages__item--wrong-height">
               <div class="advantages__logo">
                 <svg aria-hidden="true" role="img" focusable="false" width="35" height="35" viewBox="0 0 35 35">
                   <use href="img/sprite_auto.svg#tag"></use>
@@ -163,10 +163,18 @@
             <p>Мы проконсультируем Вас бесплатно</p>
             <form action="https://echo.htmlacademy.ru/" method="get">
                 <label class="visually-hidden" for="name">Имя.</label>
-                <input type="text" name="name" id="name" placeholder="Имя">
+                <input type="text" name="name" id="name" placeholder="Имя" required>
                 <label class="visually-hidden" for="phone">Телефон.</label>
-                <input type="tel" name="phone" id="phone" placeholder="Телефон" pattern="\+7\s[\(]\d{3}[\)]\s\d{3}\s\d{2}\s\d{2}" data-phone-input
-                maxlength="18">
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  placeholder="Телефон"
+                  pattern="\+7\s?[\(]?\d{3}[\)]?\s?\d{3}\s?\d{2}\s?\d{2}"
+                  maxlength="10"
+                  data-phone-input
+                  required
+                >
                 <label class="visually-hidden" for="question">Ваш вопрос.</label>
                 <textarea id="question" name="question" placeholder="Ваш вопрос"></textarea>
               <button class="btn" type="submit">Задать вопрос</button>
@@ -231,7 +239,7 @@
               <span class="visually-hidden">Открыть меню.</span>
             </button>
           </div>
-          <ul class="footer__list footer__list--nav" data-nav-list-1>
+          <ul class="footer__list footer__list--nav footer__list--nojs" data-nav-list-1>
             <li class="footer__list-item">
               <a href="#">О Компании</a>
             </li>
@@ -248,7 +256,7 @@
         </nav>
         <nav class="footer__item footer__item--nav-2">
           <h2 class="visually-hidden">Еще разделы сайта.</h2>
-          <ul class="footer__list" data-nav-list-2>
+          <ul class="footer__list footer__list--nojs" data-nav-list-2>
             <li class="footer__list-item">
               <a href="#">Комплектующие</a>
             </li>
@@ -267,7 +275,7 @@
               <span class="visually-hidden">Открыть меню.</span>
             </button>
           </div>
-          <ul class="footer__list" data-contacts-list>
+          <ul class="footer__list footer__list--nojs" data-contacts-list>
             <li class="footer__list-item">
               <p>г. Мытищи, Олимпийский проспект, д.10</p>
             </li>
@@ -299,9 +307,18 @@
             <p>Оставьте контакты, мы проконсультируем вас&nbsp;бесплатно в удобное время</p>
             <form action="https://echo.htmlacademy.ru/" method="get">
                 <label class="visually-hidden" for="name2">Имя.</label>
-                <input type="text" name="name" id="name2" placeholder="Имя">
+                <input type="text" name="name" id="name2" placeholder="Имя" required>
                 <label class="visually-hidden" for="phone2">Телефон.</label>
-                <input type="tel" name="phone" id="phone2" placeholder="Телефон" pattern="\+7\s[\(]\d{3}[\)]\s\d{3}\s\d{2}\s\d{2}" data-phone-input>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone2"
+                  placeholder="Телефон"
+                  pattern="\+7\s?[\(]?\d{3}[\)]?\s?\d{3}\s?\d{2}\s?\d{2}"
+                  maxlength="10"
+                  required
+                  data-phone-input
+                >
                 <label class="visually-hidden" for="question2">Ваш вопрос.</label>
                 <textarea id="question2" name="question" placeholder="Ваш вопрос"></textarea>
               <button class="btn" type="submit">Отправить</button>

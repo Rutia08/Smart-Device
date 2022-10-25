@@ -98,6 +98,15 @@
         }
       }
     }
+
+    &--wrong-height {
+      @include vp-1023 {
+        // "не винвоатая я - макет кривой ("
+        p {
+          margin-top: -8px;
+        }
+      }
+    }
   }
 
   &__logo {

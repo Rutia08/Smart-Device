@@ -116,6 +116,7 @@
 
     @include vp-767 {
       grid-template-columns: 1fr;
+      position: relative;
     }
   }
 
@@ -145,12 +146,19 @@
   & input[type="text"] {
     grid-column: 1/2;
     grid-row: 1/2;
+
+    &:invalid {
+      outline-color: $color-torch-red;
+    }
   }
 
   & input[type="tel"] {
     grid-column: 2/-1;
     grid-row: 1/2;
 
+    &:invalid {
+      outline-color: $color-torch-red;
+    }
 
     @include vp-767 {
       grid-column: 1/-1;
@@ -232,6 +240,22 @@
 
     &:focus + span {
       outline: 2px solid $color-default-black;
+    }
+
+    &:invalid + span {
+      outline-color: $color-torch-red;
+
+      &::after {
+        color: $color-torch-red;
+        content: "Необходимо согласиться на обработку данных";
+        display: block;
+        width: 200px;
+        height: 30px;
+        position: absolute;
+        font-size: 15px;
+        top: 30px;
+        left: 0;
+      }
     }
   }
 

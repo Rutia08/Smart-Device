@@ -61,7 +61,7 @@
       text-transform: uppercase;
 
       @include vp-767 {
-        margin: 21px 0;
+        margin: 21px 0 22px;
       }
     }
 
@@ -111,17 +111,13 @@
       @include vp-767 {
         flex-direction: column;
         border-bottom: 1px solid $color-default-white;
-        padding-bottom: 21px;
+        padding-bottom: 17px;
         margin-bottom: 0;
       }
+    }
 
-      a {
-        @include vp-767 {
-          margin-bottom: 15px;
-        }
-      }
-
-      img {
+    & img {
+      @include vp-767 {
         margin-left: -3px;
       }
     }
@@ -135,12 +131,6 @@
 
       @include vp-767 {
         padding: 0 clamp($wrapper-padding-mobile-min, $wrapper-padding-mobile, $wrapper-padding-mobile-max);
-      }
-
-      li {
-        @include vp-1023 {
-          margin-bottom: 5px;
-        }
       }
     }
 
@@ -167,12 +157,6 @@
           margin-bottom: 20px;
         }
       }
-
-      li {
-        @include vp-1023 {
-          margin-bottom: 5px;
-        }
-      }
     }
 
     &--contacts {
@@ -194,12 +178,6 @@
         border-bottom: 1px solid $color-default-white;
       }
 
-      li {
-        @include vp-1023 {
-          margin-bottom: 5px;
-        }
-      }
-
       h2 {
         margin-bottom: 23px;
       }
@@ -210,6 +188,12 @@
         @include vp-767 {
           margin-bottom: 15px;
         }
+      }
+    }
+
+    li {
+      @include vp-1023 {
+        margin-bottom: 5px;
       }
     }
   }
@@ -232,6 +216,10 @@
     @include vp-767 {
       display: none;
 
+      &--nojs {
+        display: block;
+      }
+
       &--opened {
         display: block;
       }
@@ -245,11 +233,13 @@
 
       @include vp-1023 {
         padding-left: 0;
+        margin-top: 10px;
       }
 
       @include vp-767 {
-        padding-top: 5px;
+        padding-top: 10px;
         display: flex;
+        margin-left: 3px;
       }
     }
 
@@ -312,7 +302,8 @@
         display: block;
         position: absolute;
         top: 50%;
-        left: 0;
+        left: -1px;
+        transform: translateY(-2px);
         width: 15px;
         height: 1px;
         background-color: $color-default-white;

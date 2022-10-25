@@ -150,4 +150,12 @@
   & .feedback__checkbox span {
     top: 0;
   }
+
+  & .feedback__checkbox input[type="checkbox"] {
+    &:invalid + span {
+      &::after {
+        width: 500px;
+      }
+    }
+  }
 }

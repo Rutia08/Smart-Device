@@ -41,6 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    input.setAttribute('maxlength', 18);
     input.addEventListener('input', mask, false);
     input.addEventListener('focus', mask, false);
     input.addEventListener('blur', mask, false);
@@ -120,6 +121,9 @@ aboutButton.addEventListener('click', function () {
 // footer menu
 footerButton1.classList.remove('footer__button--nojs');
 footerButton2.classList.remove('footer__button--nojs');
+footerNav1.classList.remove('footer__list--nojs');
+footerNav2.classList.remove('footer__list--nojs');
+footerContacts.classList.remove('footer__list--nojs');
 
 footerHeadingWrapper1.addEventListener('click', function () {
   footerButton1.classList.toggle('footer__button--list-opened');

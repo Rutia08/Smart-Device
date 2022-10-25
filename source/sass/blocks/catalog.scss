@@ -199,23 +199,25 @@
       }
     }
 
-    &--montage a {
-      background-position: bottom left, bottom -136px left -534px;
+    &--montage {
+      a {
+        background-position: bottom left, bottom -136px left -534px;
 
-      br {
-        display: none;
-      }
+        @include vp-1023 {
+          background-position: bottom left, bottom -343px left -628px;
+        }
 
-      @include vp-1023 {
-        background-position: bottom left, bottom -343px left -628px;
-
-        br {
-          display: block;
+        @include vp-767 {
+          background-position: bottom left, bottom -120px left -365px;
         }
       }
 
-      @include vp-767 {
-        background-position: bottom left, bottom -120px left -365px;
+      br {
+        display: none;
+
+        @include vp-1023 {
+          display: block;
+        }
       }
     }
 
