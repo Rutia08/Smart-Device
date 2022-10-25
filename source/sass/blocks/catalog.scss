@@ -1,236 +1,236 @@
 .catalog {
   background-color: $color-black-pearl;
+}
 
-  &__wrapper {
-    margin: 0 auto;
-    max-width: 1920px;
-    padding: 65px clamp($wrapper-padding-desktop-min, $wrapper-padding-desktop, $wrapper-padding-desktop-max) 140px;
+.catalog__wrapper {
+  margin: 0 auto;
+  max-width: 1920px;
+  padding: 65px clamp($wrapper-padding-desktop-min, $wrapper-padding-desktop, $wrapper-padding-desktop-max) 140px;
 
-    @include vp-1439 {
-      padding-left: 8%;
-      padding-right: 8%;
-      min-width: 1024px;
-    }
-
-    @include vp-1023 {
-      padding: 55px clamp($wrapper-padding-tablet-min, $wrapper-padding-tablet, $wrapper-padding-tablet-max) 75px;
-      min-width: 768px;
-    }
-
-    @include vp-767 {
-      padding: 47px clamp($wrapper-padding-mobile-min, $wrapper-padding-mobile, $wrapper-padding-mobile-max) 86px;
-      min-width: 320px;
-    }
+  @include vp-1439 {
+    padding-left: 8%;
+    padding-right: 8%;
+    min-width: 1024px;
   }
 
-  & h2 {
-    font-family: "Roboto Condensed", $font-sans-serif;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 51px;
-    color: $color-default-white;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 54px;
-    margin-left: 1px;
-
-    @include vp-1023 {
-      margin-bottom: 38px;
-      margin-left: 0;
-    }
-
-    @include vp-767 {
-      padding-right: 25px;
-      margin-bottom: 29px;
-      font-size: 28px;
-
-      text-indent: -9999px;
-      line-height: 0;
-
-      &::after {
-        content: "Товары и услуги Smart Device";
-        text-indent: 0;
-        display: block;
-        line-height: 140.62%;
-      }
-    }
+  @include vp-1023 {
+    padding: 55px clamp($wrapper-padding-tablet-min, $wrapper-padding-tablet, $wrapper-padding-tablet-max) 75px;
+    min-width: 768px;
   }
 
-  &__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp($list-grid-gap-desktop-min, $list-grid-gap-desktop, $list-grid-gap-desktop-max);
+  @include vp-767 {
+    padding: 47px clamp($wrapper-padding-mobile-min, $wrapper-padding-mobile, $wrapper-padding-mobile-max) 86px;
+    min-width: 320px;
+  }
+}
 
-    @include vp-1023 {
-      margin: 0;
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
+.catalog h2 {
+  font-family: "Roboto Condensed", $font-sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  color: $color-default-white;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 54px;
+  margin-left: 1px;
+
+  @include vp-1023 {
+    margin-bottom: 38px;
+    margin-left: 0;
   }
 
-  &__item {
-    position: relative;
-    background-color: rgba(4, 24, 39, 0.5);
-    width: clamp($card-width-desktop-min, $card-width-desktop, $card-width-desktop-max);
+  @include vp-767 {
+    padding-right: 25px;
+    margin-bottom: 29px;
+    font-size: 28px;
 
-    @include vp-1023 {
-      width: 100%;
-    }
+    text-indent: -9999px;
+    line-height: 0;
 
-    a {
-      padding-top: 47px;
-      padding-left: 7px;
+    &::after {
+      content: "Товары и услуги Smart Device";
+      text-indent: 0;
       display: block;
-      width: 100%;
-      max-width: 350px;
-      min-height: 650px;
-      position: relative;
-      background-color: $color-black-pearl;
+      line-height: 140.62%;
+    }
+  }
+}
 
-      /* stylelint-disable */
+.catalog__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp($list-grid-gap-desktop-min, $list-grid-gap-desktop, $list-grid-gap-desktop-max);
+
+  @include vp-1023 {
+    margin: 0;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.catalog__item {
+  position: relative;
+  background-color: rgba(4, 24, 39, 0.5);
+  width: clamp($card-width-desktop-min, $card-width-desktop, $card-width-desktop-max);
+
+  @include vp-1023 {
+    width: 100%;
+  }
+
+  a {
+    padding-top: 47px;
+    padding-left: 7px;
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    min-height: 650px;
+    position: relative;
+    background-color: $color-black-pearl;
+
+    /* stylelint-disable */
+    background-image:
+      $black-to-bottom-catalog,
+      image-set(
+        "../img/background.webp" 1x,
+        "../img/background.png" 1x
+    );
+
+    @media (min-resolution: 2dppx) {
       background-image:
         $black-to-bottom-catalog,
         image-set(
-          "../img/background.webp" 1x,
-          "../img/background.png" 1x
+          "../img/background@2x.webp" 2x,
+          "../img/background@2x.png" 2x
       );
+    }
+    /* stylelint-enable */
+
+    background-repeat: no-repeat;
+    background-size: 1494px;
+
+    @include vp-1023 {
+      padding: 37px 400px 0 45px;
+      min-height: 250px;
+      max-width: 100%;
+    }
+
+    @include vp-767 {
+      padding: 26px 90px 0 30px;
+    }
+
+    @include hover {
+
+      /* stylelint-disable */
+      background-image:
+        $black-catalog-hover,
+        image-set(
+          "../img/background.webp" 1x,
+          "../img/background.png"  1x
+        );
 
       @media (min-resolution: 2dppx) {
         background-image:
-          $black-to-bottom-catalog,
+          $black-catalog-hover,
           image-set(
-            "../img/background@2x.webp" 2x,
+            "../img/background@2x.webp"2x,
             "../img/background@2x.png" 2x
         );
       }
       /* stylelint-enable */
+    }
 
+    &::after {
+      content: "";
+      display: block;
+      width: 17%;
+      height: 60px;
+      position: absolute;
+      bottom: 0;
+      right: 1px;
+      background-color: $color-deep-sky-blue;
+      background-image: url("../../img/svg/icon-products.svg");
       background-repeat: no-repeat;
-      background-size: 1494px;
+      background-size: 6px;
+      background-position: 53%;
 
       @include vp-1023 {
-        padding: 37px 400px 0 45px;
-        min-height: 250px;
-        max-width: 100%;
+        width: 60px;
+        right: 0;
       }
 
       @include vp-767 {
-        padding: 26px 90px 0 30px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+.catalog__item h3 {
+  margin: 0 clamp($title-margin-desktop-min, $title-margin-right-desktop, $title-margin-right-desktop-max) 0 clamp($title-margin-desktop-min, $title-margin-desktop, $title-margin-desktop-max);
+  padding: 0;
+  font-family: "Roboto Condensed", $font-sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: $color-default-white;
+
+  @include vp-1023 {
+    margin: 0;
+  }
+
+  @include vp-767 {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  &--production a {
+    background-position: bottom left, bottom -141px left -189px;
+
+    @include vp-1023 {
+      background-position: bottom left, bottom -108px left -244px;
+    }
+
+    @include vp-767 {
+      background-position: bottom left, bottom -358px left -375px;
+    }
+  }
+
+  &--montage {
+    a {
+      background-position: bottom left, bottom -136px left -534px;
+
+      @include vp-1023 {
+        background-position: bottom left, bottom -343px left -628px;
       }
 
-      @include hover {
-
-        /* stylelint-disable */
-        background-image:
-          $black-catalog-hover,
-          image-set(
-            "../img/background.webp" 1x,
-            "../img/background.png"  1x
-          );
-
-        @media (min-resolution: 2dppx) {
-          background-image:
-            $black-catalog-hover,
-            image-set(
-              "../img/background@2x.webp"2x,
-              "../img/background@2x.png" 2x
-          );
-        }
-        /* stylelint-enable */
+      @include vp-767 {
+        background-position: bottom left, bottom -120px left -365px;
       }
+    }
 
-      &::after {
-        content: "";
+    br {
+      display: none;
+
+      @include vp-1023 {
         display: block;
-        width: 17%;
-        height: 60px;
-        position: absolute;
-        bottom: 0;
-        right: 1px;
-        background-color: $color-deep-sky-blue;
-        background-image: url("../../img/svg/icon-products.svg");
-        background-repeat: no-repeat;
-        background-size: 6px;
-        background-position: 53%;
-
-        @include vp-1023 {
-          width: 60px;
-          right: 0;
-        }
-
-        @include vp-767 {
-          width: 40px;
-          height: 40px;
-        }
       }
     }
+  }
 
-    h3 {
-      margin: 0 clamp($title-margin-desktop-min, $title-margin-right-desktop, $title-margin-right-desktop-max) 0 clamp($title-margin-desktop-min, $title-margin-desktop, $title-margin-desktop-max);
-      padding: 0;
-      font-family: "Roboto Condensed", $font-sans-serif;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 30px;
-      color: $color-default-white;
+  &--accessories a {
+    background-position: bottom left, bottom -147px right -250px;
 
-      @include vp-1023 {
-        margin: 0;
-      }
-
-      @include vp-767 {
-        font-size: 18px;
-        line-height: 30px;
-      }
+    @include vp-1023 {
+      background-position: bottom left, bottom -298px left -148px;
     }
 
-    &--production a {
-      background-position: bottom left, bottom -141px left -189px;
-
-      @include vp-1023 {
-        background-position: bottom left, bottom -108px left -244px;
-      }
-
-      @include vp-767 {
-        background-position: bottom left, bottom -358px left -375px;
-      }
-    }
-
-    &--montage {
-      a {
-        background-position: bottom left, bottom -136px left -534px;
-
-        @include vp-1023 {
-          background-position: bottom left, bottom -343px left -628px;
-        }
-
-        @include vp-767 {
-          background-position: bottom left, bottom -120px left -365px;
-        }
-      }
-
-      br {
-        display: none;
-
-        @include vp-1023 {
-          display: block;
-        }
-      }
-    }
-
-    &--accessories a {
-      background-position: bottom left, bottom -147px right -250px;
-
-      @include vp-1023 {
-        background-position: bottom left, bottom -298px left -148px;
-      }
-
-      @include vp-767 {
-        background-position: bottom left, bottom -263px right -340px;
-      }
+    @include vp-767 {
+      background-position: bottom left, bottom -263px right -340px;
     }
   }
 }
