@@ -90,6 +90,7 @@
       position: relative;
       background-color: $color-black-pearl;
 
+      /* stylelint-disable */
       background-image:
         $black-to-bottom-catalog,
         image-set(
@@ -105,6 +106,7 @@
             "../img/background@2x.png" 2x
         );
       }
+      /* stylelint-enable */
 
       background-repeat: no-repeat;
       background-size: 1494px;
@@ -121,6 +123,7 @@
 
       @include hover {
 
+        /* stylelint-disable */
         background-image:
           $black-catalog-hover,
           image-set(
@@ -136,6 +139,7 @@
               "../img/background@2x.png" 2x
           );
         }
+        /* stylelint-enable */
       }
 
       &::after {

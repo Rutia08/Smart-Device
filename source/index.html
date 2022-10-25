@@ -7,7 +7,7 @@
     <meta name="description" content="Первый проект Акселератора">
     <title>Smart Device</title>
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicon.ico">
     <link rel="preload" href="fonts/roboto-condensed-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/roboto-condensed-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/pt-mono-regular.woff2" as="font" type="font/woff2" crossorigin="">
@@ -165,7 +165,8 @@
                 <label class="visually-hidden" for="name">Имя.</label>
                 <input type="text" name="name" id="name" placeholder="Имя">
                 <label class="visually-hidden" for="phone">Телефон.</label>
-                <input type="tel" name="phone" id="phone" placeholder="Телефон" data-phone-input>
+                <input type="tel" name="phone" id="phone" placeholder="Телефон" pattern="\+7\s[\(]\d{3}[\)]\s\d{3}\s\d{2}\s\d{2}" data-phone-input
+                maxlength="18">
                 <label class="visually-hidden" for="question">Ваш вопрос.</label>
                 <textarea id="question" name="question" placeholder="Ваш вопрос"></textarea>
               <button class="btn" type="submit">Задать вопрос</button>
@@ -300,7 +301,7 @@
                 <label class="visually-hidden" for="name2">Имя.</label>
                 <input type="text" name="name" id="name2" placeholder="Имя">
                 <label class="visually-hidden" for="phone2">Телефон.</label>
-                <input type="tel" name="phone" id="phone2" placeholder="Телефон" data-phone-input>
+                <input type="tel" name="phone" id="phone2" placeholder="Телефон" pattern="\+7\s[\(]\d{3}[\)]\s\d{3}\s\d{2}\s\d{2}" data-phone-input>
                 <label class="visually-hidden" for="question2">Ваш вопрос.</label>
                 <textarea id="question2" name="question" placeholder="Ваш вопрос"></textarea>
               <button class="btn" type="submit">Отправить</button>

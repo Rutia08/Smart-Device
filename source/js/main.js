@@ -4,12 +4,10 @@ import {initModals} from './modules/modals/init-modals';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
-
   //  маска для поля ввода телефона (https://web-revenue.ru/verstka/maska-vvoda-telefona-v-input-na-js)
   [].forEach.call(document.querySelectorAll('[data-phone-input]'), function (input) {
-    let keyCode;
     function mask(event) {
-      keyCode = event.keyCode;
+      let keyCode = event.keyCode;
       let pos = input.selectionStart;
       if (pos < 3) {
         event.preventDefault();
@@ -24,9 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       i = newValue.indexOf('_');
 
-      //  if (i !== -1) {
       if (i !== -1) {
-        // (i < 5) && (i = 3);
         newValue = newValue.slice(0, i);
       }
 
