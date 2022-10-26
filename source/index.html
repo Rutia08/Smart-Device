@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Первый проект Акселератора">
+    <meta name="description" content="Первый проект Акселератора.">
     <title>Smart Device</title>
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="img/favicon.ico">
@@ -17,7 +17,8 @@
       <div class="header__wrapper">
         <div class="header__logo">
           <picture>
-            <source media="(max-width: 767px)" srcset="img/svg/logo-header-mobile.svg">
+            <source media="(max-width: 767px)"
+              srcset="img/svg/logo-header-mobile.svg">
             <img
               src="img/svg/logo-header-desktop.svg"
               width="215"
@@ -28,7 +29,7 @@
         <ul class="header__contacts-list">
           <li class="header__contacts-item">
             <a href="mailto:info@sd.ru">
-              <svg class="header__icon" aria-hidden="true" role="img" focusable="false" width="20" height="20" viewBox="0 0 21 20">
+              <svg aria-hidden="true" role="img" focusable="false" width="20" height="20" viewBox="0 0 21 20">
                 <use href="img/sprite_auto.svg#email"></use>
               </svg>
               <span>info@sd.ru</span>
@@ -83,7 +84,7 @@
               <div class="advantages__logo">
                 <svg aria-hidden="true" role="img" focusable="false" width="35" height="35" viewBox="0 0 35 35">
                   <use href="img/sprite_auto.svg#detective"></use>
-                </svg>
+                </svg>np
               </div>
               <h3>Полная конфиденциальность</h3>
               <p>По желанию клиента &ensp;мы обеспечиваем полную конфиденциальность.</p>
@@ -170,8 +171,8 @@
                   name="phone"
                   id="phone"
                   placeholder="Телефон"
-                  pattern="\+7\s?[\(]?\d{3}[\)]?\s?\d{3}\s?\d{2}\s?\d{2}"
-                  maxlength="10"
+                  pattern="\+?[\(\)\d\s\-]{7,}"
+                  maxlength="12"
                   data-phone-input
                   required
                 >
@@ -314,8 +315,8 @@
                   name="phone"
                   id="phone2"
                   placeholder="Телефон"
-                  pattern="\+7\s?[\(]?\d{3}[\)]?\s?\d{3}\s?\d{2}\s?\d{2}"
-                  maxlength="10"
+                  pattern="\+?[\(\)\d\s\-]{7,}"
+                  maxlength="12"
                   required
                   data-phone-input
                 >

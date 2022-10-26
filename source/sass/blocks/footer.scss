@@ -210,7 +210,7 @@
   }
 }
 
-.footer__item__list {
+.footer__list {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -232,6 +232,7 @@
     padding-left: 15px;
     flex-wrap: wrap;
     max-width: 300px;
+    margin-top: 35px;
 
     @include vp-1023 {
       padding-left: 0;
@@ -305,10 +306,10 @@
       position: absolute;
       top: 50%;
       left: -1px;
-      transform: translateY(-2px);
       width: 15px;
       height: 1px;
       background-color: $color-default-white;
+      transform: translateY(-2px);
     }
 
     &::before {
