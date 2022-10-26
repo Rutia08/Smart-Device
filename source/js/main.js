@@ -4,49 +4,6 @@ import {initModals} from './modules/modals/init-modals';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
-  //  маска для поля ввода телефона (https://web-revenue.ru/verstka/maska-vvoda-telefona-v-input-na-js)
-  [].forEach.call(document.querySelectorAll('[data-phone-input]'), function (input) {
-    function mask(event) {
-      let keyCode = event.keyCode;
-      let pos = input.selectionStart;
-      if (pos < 3) {
-        event.preventDefault();
-      }
-      let matrix = '+7 (___) ___ __ __';
-      let i = 0;
-      let def = matrix.replace(/\D/g, '');
-      let val = input.value.replace(/\D/g, '');
-      let newValue = matrix.replace(/[_\d]/g, function (a) {
-        return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
-      });
-
-      i = newValue.indexOf('_');
-
-      if (i !== -1) {
-        newValue = newValue.slice(0, i);
-      }
-
-      let reg = matrix.substring(0, input.value.length).replace(/_+/g, function (a) {
-        return '\\d{1,' + a.length + '}';
-      }).replace(/[+()]/g, '\\$&');
-
-      reg = new RegExp('^' + reg + '$');
-
-      if (!reg.test(input.value) || input.value.length < 5 || keyCode > 47 && keyCode < 58) {
-        input.value = newValue;
-      }
-
-      if (event.type === 'blur' && input.value.length < 5) {
-        input.value = '';
-      }
-    }
-
-    input.setAttribute('maxlength', 18);
-    input.addEventListener('input', mask, false);
-    input.addEventListener('focus', mask, false);
-    input.addEventListener('blur', mask, false);
-    input.addEventListener('keydown', mask, false);
-  });
 
   // Utils
   // ---------------------------------
@@ -60,6 +17,124 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initModals();
+  });
+
+  let aboutButton = document.querySelector('[data-about-button]');
+  let aboutAdditional = document.querySelector('[data-about-additional]');
+
+  // data-heading-wrapper
+  let footerHeadingWrapper1 = document.querySelector('[data-heading-wrapper-1]');
+  let footerHeadingWrapper2 = document.querySelector('[data-heading-wrapper-2]');
+  let footerButton1 = document.querySelector('[data-footer-button-1]');
+  let footerButton2 = document.querySelector('[data-footer-button-2]');
+  let footerNav1 = document.querySelector('[data-nav-list-1]');
+  let footerNav2 = document.querySelector('[data-nav-list-2]');
+  let footerContacts = document.querySelector('[data-contacts-list]');
+
+  // about
+  aboutButton.classList.remove('about__button--nojs');
+  aboutAdditional.classList.add('is-hidden');
+
+  // почему-то без этого первый клик не работает
+  aboutButton.innerHTML = 'Подробнее';
+
+  aboutButton.addEventListener('click', function () {
+    aboutAdditional.classList.toggle('is-hidden');
+    if (aboutButton.innerHTML === 'Подробнее') {
+      aboutButton.innerHTML = 'Скрыть';
+    } else {
+      aboutButton.innerHTML = 'Подробнее';
+    }
+  });
+
+  // input
+  [].forEach.call(document.querySelectorAll('[data-phone-input]'), function (inputElement) {
+
+    inputElement.setAttribute('maxlength', 18);
+
+    inputElement.addEventListener('focus', () => {
+      if (inputElement.value.length === 0) {
+        inputElement.value = '+7 (';
+        inputElement.selectionStart = inputElement.value.length;
+      }
+    });
+
+    inputElement.addEventListener('blur', () => {
+      if (inputElement.value.length < 18) {
+        inputElement.value = '';
+      }
+    });
+
+    inputElement.addEventListener('click', () => {
+      if (inputElement.selectionStart < 4) {
+        inputElement.selectionStart = inputElement.value.length;
+      }
+    });
+
+    inputElement.addEventListener('keypress', (evt) => {
+      if (evt.keyCode < 47 || evt.keyCode > 57) {
+        evt.preventDefault();
+      }
+    });
+
+    inputElement.addEventListener('keydown', (evt) => {
+      if (evt.key === 'Backspace' && inputElement.value.length <= 4) {
+        evt.preventDefault();
+      }
+      if (evt.key === 'Delete' && inputElement.value.length <= 4) {
+        evt.preventDefault();
+      }
+    });
+
+    inputElement.oninput = () => {
+      const nums = inputElement.value.split(/[ ()+]+/).join('');
+      let cursorPosition = inputElement.selectionStart;
+      if (nums.length > 9) {
+        inputElement.value = '+' + nums.slice(0, 1) + ' (' + nums.slice(1, 4) + ') ' + nums.slice(4, 7) + ' ' + nums.slice(7, 9) + ' ' + nums.slice(9, nums.length);
+      } else
+      if (nums.length > 7) {
+        inputElement.value = '+' + nums.slice(0, 1) + ' (' + nums.slice(1, 4) + ') ' + nums.slice(4, 7) + ' ' + nums.slice(7, nums.length);
+      } else
+      if (nums.length > 4) {
+        inputElement.value = '+' + nums.slice(0, 1) + ' (' + nums.slice(1, 4) + ') ' + nums.slice(4, nums.length);
+        cursorPosition = cursorPosition + 2;
+      } else
+      if (nums.length > 1) {
+        inputElement.value = '+' + nums.slice(0, 1) + ' (' + nums.slice(1, nums.length);
+      }
+      if (inputElement.value.slice(cursorPosition - 1, cursorPosition) === ' ') {
+        cursorPosition++;
+      }
+      if (inputElement.value.slice(cursorPosition - 2, cursorPosition - 1) === ')') {
+        cursorPosition = cursorPosition + 2;
+      }
+
+      inputElement.selectionStart = cursorPosition;
+      inputElement.selectionEnd = cursorPosition;
+    };
+  });
+
+  // footer menu
+  footerButton1.classList.remove('footer__button--nojs');
+  footerButton2.classList.remove('footer__button--nojs');
+  footerNav1.classList.remove('footer__list--nojs');
+  footerNav2.classList.remove('footer__list--nojs');
+  footerContacts.classList.remove('footer__list--nojs');
+
+  footerHeadingWrapper1.addEventListener('click', function () {
+    footerButton1.classList.toggle('footer__button--list-opened');
+    footerNav1.classList.toggle('footer__list--opened');
+    footerNav2.classList.toggle('footer__list--opened');
+    footerButton2.classList.remove('footer__button--list-opened');
+    footerContacts.classList.remove('footer__list--opened');
+  });
+
+  footerHeadingWrapper2.addEventListener('click', function () {
+    footerButton2.classList.toggle('footer__button--list-opened');
+    footerContacts.classList.toggle('footer__list--opened');
+    footerButton1.classList.remove('footer__button--list-opened');
+    footerNav1.classList.remove('footer__list--opened');
+    footerNav2.classList.remove('footer__list--opened');
   });
 });
 
@@ -87,56 +162,3 @@ window.addEventListener('DOMContentLoaded', () => {
 // breakpointChecker();
 
 // используйте .closest(el)
-
-// мой js
-
-let aboutButton = document.querySelector('[data-about-button]');
-let aboutAdditional = document.querySelector('[data-about-additional]');
-
-// data-heading-wrapper
-let footerHeadingWrapper1 = document.querySelector('[data-heading-wrapper-1]');
-let footerHeadingWrapper2 = document.querySelector('[data-heading-wrapper-2]');
-let footerButton1 = document.querySelector('[data-footer-button-1]');
-let footerButton2 = document.querySelector('[data-footer-button-2]');
-let footerNav1 = document.querySelector('[data-nav-list-1]');
-let footerNav2 = document.querySelector('[data-nav-list-2]');
-let footerContacts = document.querySelector('[data-contacts-list]');
-
-// about
-aboutButton.classList.remove('about__button--nojs');
-aboutAdditional.classList.add('is-hidden');
-
-// почему-то без этого первый клик не работает
-aboutButton.innerHTML = 'Подробнее';
-
-aboutButton.addEventListener('click', function () {
-  aboutAdditional.classList.toggle('is-hidden');
-  if (aboutButton.innerHTML === 'Подробнее') {
-    aboutButton.innerHTML = 'Скрыть';
-  } else {
-    aboutButton.innerHTML = 'Подробнее';
-  }
-});
-
-// footer menu
-footerButton1.classList.remove('footer__button--nojs');
-footerButton2.classList.remove('footer__button--nojs');
-footerNav1.classList.remove('footer__list--nojs');
-footerNav2.classList.remove('footer__list--nojs');
-footerContacts.classList.remove('footer__list--nojs');
-
-footerHeadingWrapper1.addEventListener('click', function () {
-  footerButton1.classList.toggle('footer__button--list-opened');
-  footerNav1.classList.toggle('footer__list--opened');
-  footerNav2.classList.toggle('footer__list--opened');
-  footerButton2.classList.remove('footer__button--list-opened');
-  footerContacts.classList.remove('footer__list--opened');
-});
-
-footerHeadingWrapper2.addEventListener('click', function () {
-  footerButton2.classList.toggle('footer__button--list-opened');
-  footerContacts.classList.toggle('footer__list--opened');
-  footerButton1.classList.remove('footer__button--list-opened');
-  footerNav1.classList.remove('footer__list--opened');
-  footerNav2.classList.remove('footer__list--opened');
-});
