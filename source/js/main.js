@@ -52,14 +52,14 @@ window.addEventListener('DOMContentLoaded', () => {
   aboutAdditional.classList.add('is-hidden');
 
   // почему-то без этого первый клик не работает
-  aboutButton.innerHTML = 'Подробнее';
+  aboutButton.innerHTML = aboutButton.getAttribute('data-about-button-closed');
 
   aboutButton.addEventListener('click', function () {
     aboutAdditional.classList.toggle('is-hidden');
-    if (aboutButton.innerHTML === 'Подробнее') {
-      aboutButton.innerHTML = 'Скрыть';
+    if (aboutButton.innerHTML === aboutButton.getAttribute('data-about-button-closed')) {
+      aboutButton.innerHTML = aboutButton.getAttribute('data-about-button-open');
     } else {
-      aboutButton.innerHTML = 'Подробнее';
+      aboutButton.innerHTML = aboutButton.getAttribute('data-about-button-closed');
     }
   });
 
