@@ -34,16 +34,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // promo + catalog
 
-  window.addEventListener('resize', function () {
+  const textChanger = () => {
     if (window.innerWidth > 767) {
       promoLink.innerHTML = 'Получить бесплатную консультацию';
       catalogHeader.innerHTML = 'Smart Device предлагает следующие товары и услуги';
-
     } else {
       promoLink.innerHTML = 'бесплатная консультация';
       catalogHeader.innerHTML = 'Товары и услуги Smart Device';
     }
-  });
+  };
+
+  textChanger();
+  window.addEventListener('resize', textChanger);
 
   // about
   aboutButton.classList.remove('about__button--nojs');
