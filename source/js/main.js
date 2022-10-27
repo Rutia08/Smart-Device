@@ -19,10 +19,11 @@ window.addEventListener('DOMContentLoaded', () => {
     initModals();
   });
 
+
+  let promoLink = document.querySelector('[data-promo-link]');
   let aboutButton = document.querySelector('[data-about-button]');
   let aboutAdditional = document.querySelector('[data-about-additional]');
-
-  // data-heading-wrapper
+  let catalogHeader = document.querySelector('[data-catalog-header]');
   let footerHeadingWrapper1 = document.querySelector('[data-heading-wrapper-1]');
   let footerHeadingWrapper2 = document.querySelector('[data-heading-wrapper-2]');
   let footerButton1 = document.querySelector('[data-footer-button-1]');
@@ -30,6 +31,19 @@ window.addEventListener('DOMContentLoaded', () => {
   let footerNav1 = document.querySelector('[data-nav-list-1]');
   let footerNav2 = document.querySelector('[data-nav-list-2]');
   let footerContacts = document.querySelector('[data-contacts-list]');
+
+  // promo + catalog
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 767) {
+      promoLink.innerHTML = 'Получить бесплатную консультацию';
+      catalogHeader.innerHTML = 'Smart Device предлагает следующие товары и услуги';
+
+    } else {
+      promoLink.innerHTML = 'бесплатная консультация';
+      catalogHeader.innerHTML = 'Товары и услуги Smart Device';
+    }
+  });
 
   // about
   aboutButton.classList.remove('about__button--nojs');

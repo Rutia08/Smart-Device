@@ -10,7 +10,7 @@
     <link rel="icon" href="img/favicon.ico">
     <link rel="preload" href="fonts/roboto-condensed-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/roboto-condensed-bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/pt-mono-regular.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="fonts/pt-mono-regular.woff2" as="font" type="font/woff2" crossorigin>
   </head>
   <body>
     <header class="header">
@@ -19,11 +19,7 @@
           <picture>
             <source media="(max-width: 767px)"
               srcset="img/svg/logo-header-mobile.svg">
-            <img
-              src="img/svg/logo-header-desktop.svg"
-              width="215"
-              height="55"
-              alt="Логотип Smart Device.">
+            <img src="img/svg/logo-header-desktop.svg" width="215" height="55" alt="Логотип Smart Device.">
           </picture>
         </div>
         <ul class="header__contacts-list">
@@ -53,9 +49,10 @@
         <div class="promo__wrapper">
           <h2>Печатные платы</h2>
           <p>производство и монтаж, поставка комплектующих,<br> блоков и модулей</p>
-          <form action="#feedback">
+          <!-- <form action="#feedback">
             <button class="promo__button btn btn--blue" type="submit">Получить бесплатную консультацию</button>
-          </form>
+          </form> -->
+          <a href="#feedback" data-promo-link>Получить бесплатную консультацию</a>
         </div>
       </section>
       <section class="advantages">
@@ -84,7 +81,7 @@
               <div class="advantages__logo">
                 <svg aria-hidden="true" role="img" focusable="false" width="35" height="35" viewBox="0 0 35 35">
                   <use href="img/sprite_auto.svg#detective"></use>
-                </svg>np
+                </svg>
               </div>
               <h3>Полная конфиденциальность</h3>
               <p>По желанию клиента &ensp;мы обеспечиваем полную конфиденциальность.</p>
@@ -119,7 +116,7 @@
       </section>
       <section class="catalog">
         <div class="catalog__wrapper">
-          <h2>Smart Device предлагает следующие товары и услуги</h2>
+          <h2 data-catalog-header>Smart Device предлагает следующие товары и услуги</h2>
           <ul class="catalog__list">
             <li class="catalog__item catalog__item--production">
               <a href="#">
@@ -151,12 +148,7 @@
             <picture>
               <source type="image/webp"
                 srcset="img/feedback_picture.webp 1x, img/feedback_picture@2x.webp 2x">
-              <img
-                width="510"
-                height="285"
-                src="img/feedback_picture.png"
-                srcset="img/feedback_picture@2x.png 2x"
-                alt="Самолет.">
+              <img width="510" height="285" src="img/feedback_picture.png" srcset="img/feedback_picture@2x.png 2x" alt="Самолет.">
             </picture>
           </div>
           <div class="feedback__form">
@@ -166,16 +158,7 @@
                 <label class="visually-hidden" for="name">Имя.</label>
                 <input type="text" name="name" id="name" placeholder="Имя" required>
                 <label class="visually-hidden" for="phone">Телефон.</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  id="phone"
-                  placeholder="Телефон"
-                  pattern="\+?[\(\)\d\s\-]{7,}"
-                  maxlength="12"
-                  data-phone-input
-                  required
-                >
+                <input type="tel" name="phone" id="phone" placeholder="Телефон" pattern="\+?[\(\)\d\s\-]{7,}" maxlength="12" data-phone-input required>
                 <label class="visually-hidden" for="question">Ваш вопрос.</label>
                 <textarea id="question" name="question" placeholder="Ваш вопрос"></textarea>
               <button class="btn" type="submit">Задать вопрос</button>
@@ -196,11 +179,7 @@
         <div class="footer__item footer__item--logo-social">
           <a href="index.html">
             <picture>
-              <img
-              src="img/svg/logo-footer.svg"
-              width="215"
-              height="55"
-              alt="Логотип Smart Device.">
+              <img src="img/svg/logo-footer.svg" width="215" height="55" alt="Логотип Smart Device.">
             </picture>
           </a>
           <div class="footer__social">
@@ -310,16 +289,7 @@
                 <label class="visually-hidden" for="name2">Имя.</label>
                 <input type="text" name="name" id="name2" placeholder="Имя" required>
                 <label class="visually-hidden" for="phone2">Телефон.</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  id="phone2"
-                  placeholder="Телефон"
-                  pattern="\+?[\(\)\d\s\-]{7,}"
-                  maxlength="12"
-                  required
-                  data-phone-input
-                >
+                <input type="tel" name="phone" id="phone2" placeholder="Телефон" pattern="\+?[\(\)\d\s\-]{7,}" maxlength="12" required data-phone-input>
                 <label class="visually-hidden" for="question2">Ваш вопрос.</label>
                 <textarea id="question2" name="question" placeholder="Ваш вопрос"></textarea>
               <button class="btn" type="submit">Отправить</button>

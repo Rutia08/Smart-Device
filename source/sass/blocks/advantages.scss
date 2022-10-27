@@ -112,6 +112,7 @@
 .advantages__logo {
   margin-bottom: 20px;
   display: inline-flex;
+  vertical-align: baseline;
   color: $color-deep-sky-blue;
 
   @include vp-1023 {
