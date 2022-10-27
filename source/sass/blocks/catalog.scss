@@ -44,16 +44,7 @@
     padding-right: 25px;
     margin-bottom: 29px;
     font-size: 28px;
-
-    text-indent: -9999px;
-    line-height: 0;
-
-    &::after {
-      content: "Товары и услуги Smart Device";
-      text-indent: 0;
-      display: block;
-      line-height: 140.62%;
-    }
+    line-height: 140.62%;
   }
 }
 

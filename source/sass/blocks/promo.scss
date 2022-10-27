@@ -101,7 +101,28 @@
   }
 }
 
-.promo button {
+.promo a {
+  display: inline-flex;
+  vertical-align: baseline;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Condensed", $font-sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-alice-blue;
+  background-color: $color-deep-sky-blue;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  transition: opacity $trans-default;
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+
   margin: 0 clamp($promo-margin-desktop-min, $promo-margin-desktop, $promo-margin-desktop-max);
   padding: 15px 27px 19px;
   font-size: min(0.94vw, 22px);
@@ -117,19 +138,9 @@
 
   @include vp-767 {
     font-size: 14px;
+    line-height: 16px;
     margin: 0;
     width: 100%;
-
-    padding: 11px 27px 13px;
-
-    text-indent: -9999px;
-    line-height: 0; /* Collapse the original line */
-
-    &::after {
-      content: "бесплатная консультация";
-      text-indent: 0;
-      display: block;
-      line-height: 16px;
-    }
+    padding: 12px 27px;
   }
 }
