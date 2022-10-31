@@ -1158,6 +1158,7 @@ button,
   column-gap: 30px;
   row-gap: 20px;
   margin-left: 5px;
+  position: relative;
 }
 
 .feedback input {
@@ -1167,6 +1168,7 @@ button,
   background: rgba(4, 20, 39, 0.15);
   border-radius: 3px;
   padding: 15px;
+  position: relative;
 }
 
 .feedback input::-webkit-input-placeholder {
@@ -1204,6 +1206,19 @@ button,
   color: #ffffff;
 }
 
+.feedback__input-name {
+  position: relative;
+}
+
+.feedback__input-name span {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 5px;
+  color: #ff1553;
+  z-index: 999;
+}
+
 .feedback input[type=text] {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
@@ -1217,15 +1232,31 @@ button,
   outline-color: #ff1553;
 }
 
+.is-invalid + span {
+  display: block;
+  position: absolute;
+}
+
 .feedback input[type=tel] {
   grid-column: 2/-1;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
+  width: 100%;
 }
 
 .feedback input[type=tel]:invalid {
   outline-color: #ff1553;
+}
+
+.feedback .is-invalid {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: 2px solid #ff1553;
+}
+
+.feedback .is-invalid + span {
+  display: block;
 }
 
 .feedback textarea {
@@ -1332,6 +1363,9 @@ button,
 
 .feedback__checkbox {
   margin-left: 37px;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
 }
 
 .feedback__checkbox label {
@@ -1481,11 +1515,11 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 15px;
+  padding-left: 10px;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   max-width: 300px;
-  margin-top: 35px;
+  margin-top: 30px;
 }
 
 .footer__list--nav {
@@ -1506,10 +1540,15 @@ button,
 
 .footer__list-item--social a {
   color: #ffffff;
+  padding: 5px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: baseline;
 }
 
 .footer__list-item--social:not(:last-child) {
-  margin-right: 25px;
+  margin-right: 15px;
 }
 
 .footer__button {
@@ -1659,7 +1698,10 @@ button,
   margin-bottom: 6px;
 }
 
-.modal .btn {
+.modal button {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
   margin-right: 0;
 }
 
@@ -2052,15 +2094,12 @@ button,
 
   .footer__list--social {
     padding-left: 0;
-    margin-top: 10px;
+    margin-top: 0;
+    margin-right: -5px;
   }
 
   .footer__list-item {
     margin-bottom: 0;
-  }
-
-  .footer__list-item--social:not(:last-child) {
-    margin-right: 25px;
   }
 }
 
@@ -2387,11 +2426,12 @@ button,
   }
 
   .footer__list--social {
-    padding-top: 10px;
+    padding-top: 15px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     margin-left: 3px;
+    margin-right: 0;
   }
 
   .footer__button {

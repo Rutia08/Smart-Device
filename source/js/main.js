@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     inputElement.addEventListener('blur', () => {
-      if (inputElement.value.length < 18) {
+      if (inputElement.value.length < 5) {
         inputElement.value = '';
       }
     });
@@ -103,6 +103,13 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     inputElement.oninput = () => {
+
+      if (inputElement.value.length < 18) {
+        inputElement.classList.add('is-invalid');
+      } else {
+        inputElement.classList.remove('is-invalid');
+      }
+
       const nums = inputElement.value.split(/[ ()+]+/).join('');
       let cursorPosition = inputElement.selectionStart;
       if (nums.length > 9) {
