@@ -1217,6 +1217,7 @@ button,
   left: 5px;
   color: #ff1553;
   z-index: 999;
+  font-size: 15px;
 }
 
 .feedback input[type=text] {
@@ -1353,12 +1354,12 @@ button,
   color: #ff1553;
   content: "Необходимо согласиться на обработку данных";
   display: block;
-  width: 200px;
-  height: 30px;
+  width: 310px;
   position: absolute;
   font-size: 15px;
   top: 30px;
   left: 0;
+  z-index: 999;
 }
 
 .feedback__checkbox {
@@ -1411,7 +1412,7 @@ button,
 }
 
 .feedback__checkbox--modal input[type=checkbox]:invalid + span::after {
-  width: 300px;
+  width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

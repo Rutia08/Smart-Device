@@ -153,6 +153,7 @@
     left: 5px;
     color: $color-torch-red;
     z-index: 999;
+    font-size: 15px;
   }
 }
 
@@ -277,12 +278,12 @@
       color: $color-torch-red;
       content: "Необходимо согласиться на обработку данных";
       display: block;
-      width: 200px;
-      height: 30px;
+      width: 310px;
       position: absolute;
       font-size: 15px;
       top: 30px;
       left: 0;
+      z-index: 999;
     }
   }
 }
@@ -356,7 +357,7 @@
   input[type="checkbox"] {
     &:invalid + span {
       &::after {
-        width: 300px;
+        width: 500px;
         display: flex;
         flex-wrap: wrap;
       }
