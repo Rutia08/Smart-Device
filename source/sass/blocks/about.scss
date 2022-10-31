@@ -4,19 +4,16 @@
   padding: 0 clamp($wrapper-padding-desktop-min, $about-wrapper-padding-right-desktop, $about-wrapper-padding-right-desktop-max) 100px clamp($wrapper-padding-desktop-min, $wrapper-padding-desktop, $wrapper-padding-desktop-max);
 
   @include vp-1439 {
-    padding-left: 8%;
-    padding-right: 8%;
-    min-width: 1024px;
+    padding-left: 7%;
+    padding-right: 7%;
   }
 
   @include vp-1023 {
     padding: 39px clamp($wrapper-padding-tablet-min, $wrapper-padding-tablet, $wrapper-padding-tablet-max) 80px;
-    min-width: 768px;
   }
 
   @include vp-767 {
     padding: 25px clamp($wrapper-padding-mobile-min, $wrapper-padding-mobile, $wrapper-padding-mobile-max) 80px;
-    min-width: 320px;
   }
 }
 

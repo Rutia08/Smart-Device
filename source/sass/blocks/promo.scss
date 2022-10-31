@@ -42,8 +42,8 @@
   padding: 214px clamp($wrapper-padding-desktop-min, $wrapper-padding-desktop, $wrapper-padding-desktop-max) 280px;
 
   @include vp-1439 {
-    padding-left: 9%;
-    padding-right: 9%;
+    padding-left: 7%;
+    padding-right: 7%;
   }
 
   @include vp-1023 {
@@ -52,7 +52,6 @@
 
   @include vp-767 {
     padding: 110px clamp($wrapper-padding-mobile-min, $wrapper-padding-mobile, $wrapper-padding-mobile-max) 190px;
-    min-width: 320px;
   }
 }
 

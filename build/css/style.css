@@ -429,7 +429,6 @@ body {
   padding: 0;
   min-height: 100vh;
   min-width: 320px;
-  overflow-x: hidden;
 }
 
 html {
@@ -449,6 +448,13 @@ body {
   width: 100%;
   height: 100%;
   background-color: #f8fdff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 a {
@@ -667,6 +673,10 @@ button,
   border-radius: 3px;
   border: none;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
@@ -695,10 +705,10 @@ button,
 }
 
 .header__wrapper {
+  position: relative;
   margin: 0 auto;
   padding: 30px clamp(50px, 18.2291666667%, 350px) 35px;
   max-width: 1920px;
-  min-width: 1220px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -781,6 +791,12 @@ button,
   margin-right: 60px;
   margin-top: 5px;
   min-width: 161px;
+}
+
+.main {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
 }
 
 .promo {
@@ -1552,7 +1568,7 @@ button,
   align-items: flex-start;
   width: 100%;
   min-height: 100%;
-  padding: 146px 718px 0 702px;
+  padding-top: 146px;
 }
 
 .modal__overlay {
@@ -1567,6 +1583,7 @@ button,
 .modal__content {
   position: relative;
   border-radius: 3px;
+  margin-right: 16px;
   width: 500px;
   min-width: 400px;
   padding: 37px 40px 45px 35px;
@@ -1693,46 +1710,40 @@ button,
   }
 
   .header__wrapper {
-    padding-left: 8%;
-    padding-right: 8%;
-    min-width: 1024px;
+    padding-left: 7%;
+    padding-right: 7%;
   }
 
   .promo__wrapper {
-    padding-left: 9%;
-    padding-right: 9%;
+    padding-left: 7%;
+    padding-right: 7%;
   }
 
   .advantages__wrapper {
-    padding-left: 8%;
-    padding-right: 8%;
-    min-width: 1024px;
+    padding-left: 7%;
+    padding-right: 7%;
   }
 
   .about__wrapper {
-    padding-left: 8%;
-    padding-right: 8%;
-    min-width: 1024px;
+    padding-left: 7%;
+    padding-right: 7%;
   }
 
   .catalog__wrapper {
-    padding-left: 8%;
-    padding-right: 8%;
-    min-width: 1024px;
+    padding-left: 7%;
+    padding-right: 7%;
   }
 
   .feedback__wrapper {
-    padding-left: 8%;
-    padding-right: 8%;
-    min-width: 1024px;
+    padding-left: 7%;
+    padding-right: 7%;
   }
 
   .footer__wrapper {
     -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
-    padding-left: 8%;
-    padding-right: 8%;
-    min-width: 1024px;
+    padding-left: 7%;
+    padding-right: 7%;
   }
 
   .footer__item--nav-2 {
@@ -1761,7 +1772,6 @@ button,
 
   .header__wrapper {
     padding: 20px clamp(50px, 6.4935064935%, 100px) 25px;
-    min-width: 768px;
   }
 
   .header__contacts-list {
@@ -1828,7 +1838,6 @@ button,
 
   .advantages__wrapper {
     padding: 80px clamp(50px, 6.4935064935%, 100px) 40px;
-    min-width: 768px;
   }
 
   .advantages__list {
@@ -1862,7 +1871,6 @@ button,
 
   .about__wrapper {
     padding: 39px clamp(50px, 6.4935064935%, 100px) 80px;
-    min-width: 768px;
   }
 
   .about__card::before {
@@ -1886,7 +1894,6 @@ button,
 
   .catalog__wrapper {
     padding: 55px clamp(50px, 6.4935064935%, 100px) 75px;
-    min-width: 768px;
   }
 
   .catalog h2 {
@@ -1938,7 +1945,6 @@ button,
 
   .feedback__wrapper {
     padding: 45px clamp(50px, 6.4935064935%, 100px) 125px;
-    min-width: 768px;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
@@ -1997,7 +2003,6 @@ button,
 
   .footer__wrapper {
     padding: 50px clamp(50px, 6.4935064935%, 100px) 60px;
-    min-width: 768px;
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2066,7 +2071,6 @@ button,
 
   .header__wrapper {
     padding: 10px clamp(25px, 7.8125%, 50px) 15px;
-    min-width: 320px;
   }
 
   .header__logo {
@@ -2091,7 +2095,6 @@ button,
 
   .promo__wrapper {
     padding: 110px clamp(25px, 7.8125%, 50px) 190px;
-    min-width: 320px;
   }
 
   .promo h2 {
@@ -2119,7 +2122,6 @@ button,
 
   .advantages__wrapper {
     padding: 50px clamp(25px, 7.8125%, 50px) 25px;
-    min-width: 320px;
   }
 
   .advantages__list {
@@ -2170,7 +2172,6 @@ button,
 
   .about__wrapper {
     padding: 25px clamp(25px, 7.8125%, 50px) 80px;
-    min-width: 320px;
   }
 
   .about__card::before {
@@ -2204,7 +2205,6 @@ button,
 
   .catalog__wrapper {
     padding: 47px clamp(25px, 7.8125%, 50px) 86px;
-    min-width: 320px;
   }
 
   .catalog h2 {
@@ -2242,7 +2242,6 @@ button,
 
   .feedback__wrapper {
     padding: 47px clamp(25px, 7.8125%, 50px) 87px;
-    min-width: 320px;
   }
 
   .feedback h2 {
@@ -2300,7 +2299,6 @@ button,
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     padding: 35px 0;
-    min-width: 320px;
   }
 
   .footer__heading-wrapper {

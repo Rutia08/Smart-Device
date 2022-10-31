@@ -38,7 +38,7 @@
   align-items: flex-start;
   width: 100%;
   min-height: 100%;
-  padding: 146px 718px 0 702px;
+  padding-top: 146px;
 }
 
 .modal__overlay {
@@ -55,6 +55,7 @@
 .modal__content {
   position: relative;
   border-radius: 3px;
+  margin-right: 16px;
 
   width: 500px;
   min-width: 400px;

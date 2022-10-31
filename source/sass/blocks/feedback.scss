@@ -12,20 +12,17 @@
   gap: 30px;
 
   @include vp-1439 {
-    padding-left: 8%;
-    padding-right: 8%;
-    min-width: 1024px;
+    padding-left: 7%;
+    padding-right: 7%;
   }
 
   @include vp-1023 {
     padding: 45px clamp($wrapper-padding-tablet-min, $wrapper-padding-tablet, $wrapper-padding-tablet-max) 125px;
-    min-width: 768px;
     grid-template-columns: 1fr;
   }
 
   @include vp-767 {
     padding: 47px clamp($wrapper-padding-mobile-min, $wrapper-padding-mobile, $wrapper-padding-mobile-max) 87px;
-    min-width: 320px;
   }
 
   &::before {
