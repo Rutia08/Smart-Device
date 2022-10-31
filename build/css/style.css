@@ -448,7 +448,7 @@ html {
 body {
   width: 100%;
   height: 100%;
-  background-color: #ebebeb;
+  background-color: #f8fdff;
 }
 
 a {
@@ -780,6 +780,7 @@ button,
   line-height: 16px;
   margin-right: 60px;
   margin-top: 5px;
+  min-width: 161px;
 }
 
 .promo {
@@ -863,7 +864,7 @@ button,
   padding: 40px 40px 35px 45px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  border: 1px solid #ebebeb;
+  border: 1px solid #f8fdff;
   border-left: none;
   min-height: 300px;
 }
@@ -1053,7 +1054,7 @@ button,
   bottom: 0;
   right: 1px;
   background-color: #00b2ff;
-  background-image: url("../../img/svg/icon-products.svg");
+  background-image: url("../img/svg/icon-products.svg");
   background-repeat: no-repeat;
   background-size: 6px;
   background-position: 53%;
@@ -1286,7 +1287,7 @@ button,
 }
 
 .feedback input[type=checkbox]:checked + span {
-  background-image: url("../../img/svg/checkbox.svg");
+  background-image: url("../img/svg/checkbox.svg");
   background-repeat: no-repeat;
   background-size: 7px;
   background-position: 50%;
@@ -2065,14 +2066,11 @@ button,
 
   .header__wrapper {
     padding: 10px clamp(25px, 7.8125%, 50px) 15px;
-    -webkit-box-align: end;
-    -ms-flex-align: end;
-    align-items: flex-end;
     min-width: 320px;
   }
 
   .header__logo {
-    margin-bottom: 5px;
+    margin-top: 5px;
     min-width: 35px;
   }
 
@@ -2505,8 +2503,8 @@ button,
   }
 
   .about__card::before {
-    background-image: -webkit-image-set(url("../img/about_picture.@2x.webp") 2x, url("../img/about_picture.@2x.jpg") 2x);
-    background-image: image-set("../img/about_picture.@2x.webp" 2x, "../img/about_picture.@2x.jpg" 2x);
+    background-image: -webkit-image-set(url("../img/about_picture@2x.webp") 2x, url("../img/about_picture@2x.jpg") 2x);
+    background-image: image-set("../img/about_picture@2x.webp" 2x, "../img/about_picture@2x.jpg" 2x);
   }
 
   .catalog__item a {

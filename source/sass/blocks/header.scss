@@ -31,7 +31,6 @@
 
   @include vp-767 {
     padding: 10px clamp($wrapper-padding-mobile-min, $wrapper-padding-mobile, $wrapper-padding-mobile-max) 15px;
-    align-items: flex-end;
     min-width: 320px;
   }
 }
@@ -40,7 +39,7 @@
   min-width: 215px;
 
   @include vp-767 {
-    margin-bottom: 5px;
+    margin-top: 5px;
     min-width: 35px;
   }
 
@@ -148,6 +147,7 @@
   line-height: 16px;
   margin-right: 60px;
   margin-top: 5px;
+  min-width: 161px;
 
   @include vp-1023 {
     display: none;
