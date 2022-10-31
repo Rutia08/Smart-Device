@@ -1699,9 +1699,6 @@ button,
 }
 
 .modal button {
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1;
   margin-right: 0;
 }
 
