@@ -149,11 +149,26 @@
   span {
     display: none;
     position: absolute;
-    top: 50px;
-    left: 5px;
+    top: 60px;
+    left: -14px;
+    padding: 5px;
     color: $color-torch-red;
     z-index: 999;
     font-size: 15px;
+    background-color: $color-default-white;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px $color-default-black;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 10px;
+      background-color: $color-default-white;
+      top: -10px;
+      left: 11px;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
   }
 }
 
@@ -164,11 +179,6 @@
   &:invalid {
     outline-color: $color-torch-red;
   }
-}
-
-.is-invalid + span {
-  display: block;
-  position: absolute;
 }
 
 .feedback input[type="tel"] {
@@ -189,10 +199,10 @@
 .feedback .is-invalid {
   box-sizing: border-box;
   outline: 2px solid $color-torch-red;
+}
 
-  & + span {
-    display: block;
-  }
+.is-invalid:focus-visible + span {
+  display: block;
 }
 
 .feedback textarea {

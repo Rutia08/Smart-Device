@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // input
+  // form
   [].forEach.call(document.querySelectorAll('[data-phone-input]'), function (inputElement) {
 
     inputElement.setAttribute('maxlength', 18);
@@ -78,6 +78,7 @@ window.addEventListener('DOMContentLoaded', () => {
     inputElement.addEventListener('blur', () => {
       if (inputElement.value.length < 5) {
         inputElement.value = '';
+        inputElement.classList.remove('is-invalid');
       }
     });
 

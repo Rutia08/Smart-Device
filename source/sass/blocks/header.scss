@@ -56,16 +56,21 @@
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  flex-grow: 1;
+  justify-content: space-between;
+  margin-right: 7.5vw;
+  margin-left: 8vw;
 
   @include vp-1023 {
-    margin-top: 0;
-    margin-right: 20px;
+    justify-content: center;
+    flex-grow: 0;
+    margin: 0;
+    margin-left: 20px;
     align-content: flex-start;
   }
 
   @include vp-767 {
-    margin-right: 10px;
+    margin-right: -10px;
   }
 }
 
@@ -75,23 +80,20 @@
   justify-content: center;
   margin-top: 5px;
   margin-bottom: 5px;
-
-  &:not(:last-child) {
-    margin-right: 6.7vw;
-
-    @include vp-1023 {
-      margin-right: 20px;
-    }
-  }
+  margin-right: 20px;
 
   @include vp-1023 {
     margin-top: 0;
   }
 
+  @include vp-767 {
+    margin-right: 20px;
+  }
+
   a {
     display: inline-flex;
     vertical-align: baseline;
-    padding-left: 28px;
+    padding-left: 40px;
     padding-bottom: 2px;
     position: relative;
 
@@ -113,7 +115,7 @@
   svg {
     color: #00b2ff;
     position: absolute;
-    left: -5px;
+    left: 5px;
     top: 0;
 
     @include vp-1023 {

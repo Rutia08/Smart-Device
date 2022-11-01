@@ -24,6 +24,10 @@
   background-size: cover;
   background-position: bottom left, bottom -200px left;
 
+  @include vp-1919 {
+    background-size: 1920px;
+  }
+
   @include vp-1023 {
     background-size: 1396px;
     background-position: bottom left, bottom -145px left -123px;
