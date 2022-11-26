@@ -1,3 +1,3 @@
-# Smart-Device
+# Smart-Device (первый проект акселератора)
 
 
